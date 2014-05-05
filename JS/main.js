@@ -84,7 +84,7 @@ function radioCheck() {
   //used to check if anything has been checked.  If nothing is checked wont proceed.
   if ($("#mondayC").is(":checked")) {
     checked++;
-    $("#head1").append('<a href="#monday" data-inline="true" data-role="button">Mon</a>');
+    $("#head1").append('<a href="#monday" data-role="button">Mon</a>');
     $("#head2").append('<a href="#monday" data-role="button">Mon</a>');
     $("#head3").append('<a href="#monday" data-role="button">Mon</a>');
     $("#head4").append('<a href="#monday" data-role="button">Mon</a>');
