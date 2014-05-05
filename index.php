@@ -79,7 +79,7 @@ function addMarker() {
             <br />
             Address: 1111 Burnaby Hill
         </div>
-                <div class = "match">
+        <div class = "match">
         <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
             Nick Cage:
             <br />
