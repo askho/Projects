@@ -86,5 +86,38 @@ function addMarker() {
             Address: 1111 Burnaby Hill
         </div>
     </div>
+	
+	<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>BCIT Ride Share</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Hello</p>
+	<a href="#pagetwo" class="ui-btn" data-transition="slide">Sign In</a>
+    <a href="#pagetwo" class="ui-btn" data-transition="slide">Register</a>
+  </div>
+  
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div>
+
+<div data-role="page" id="pagetwo">
+  <div data-role="header">
+    <h1>BCIT Ride Share Page Two</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p>Welcome to the Home Page</p>
+	
+	<a href="#pageone" class="ui-btn">Back to Landing</a>
+  </div>
+  
+
+  <div data-role="footer">
+    <h1>Footer Text</h1>
+  </div>
+</div>
 </body>
 </html>
