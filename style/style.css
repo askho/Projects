@@ -1,3 +1,7 @@
+body {
+	background-image:url('dude.jpg');
+}
+
 .menuPanel {
     background-color: white;
 }
@@ -26,4 +30,5 @@ a.menuLink {
     height:75px;
     width:75px;
     float:left;
+	margin-right:20px;
 }
