@@ -86,9 +86,11 @@ function addMarker() {
             Address: 1111 Burnaby Hill
         </div>
     </div>
+    </div>
     <div data-role="page" id="myRideSchedule">
   <div data-role="header">
     <h1>My Ride Schedule</h1>
+    <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
   </div>
 
   <div data-role="main" class="ui-content">
@@ -97,7 +99,7 @@ function addMarker() {
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver">Driver</label>
-      <input type="radio" name="role" id="driver" onclick="test()" value="0">
+      <input type="radio" name="role" id="driver" value="0">
       <label for="passenger">Passenger</label>
       <input type="radio" name="role" id="passenger" value="1">
   </fieldset>
@@ -131,8 +133,9 @@ function addMarker() {
 </div> 
 
 <div data-role="page" id="monday">
-  <div data-role="header"><fieldset data-role="controlgroup" data-type="horizontal">
-    <div id="head1"></div></fieldset>
+  <div data-role="header">
+  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+    <fieldset data-role="controlgroup" data-type="horizontal"> <div id="head1"></div></fieldset>
   </div>
 
   <div data-role="main" class="ui-content">
@@ -211,7 +214,7 @@ function addMarker() {
       <option value="pm">PM</option>
       </select>
   </fieldset>
-  <fieldset data-role="controlgroup">
+  <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver1">Driver</label>
@@ -234,7 +237,8 @@ function addMarker() {
 
 <div data-role="page" id="tuesday">
   <div data-role="header">
-  <div id="head2"></div>
+  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+  <fieldset data-role="controlgroup" data-type="horizontal"><div id="head2"></div></fieldset>
   </div>
 
   <div data-role="main" class="ui-content">
@@ -313,7 +317,7 @@ function addMarker() {
       <option value="pm">PM</option>
       </select>
   </fieldset>
-  <fieldset data-role="controlgroup">
+  <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver2">Driver</label>
@@ -331,11 +335,12 @@ function addMarker() {
 </div> 
 <div data-role="page" id="wednesday">
   <div data-role="header">
-    <div id="head3"></div>
+  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+    <fieldset data-role="controlgroup" data-type="horizontal"><div id="head3"></div></fieldset>
   </div>
 
   <div data-role="main" class="ui-content">
-  <div id="dayjs"><h4> Day - Wednesday</div>
+  <div id="days"><h4> Day - Wednesday</div>
     <form method="post"> 
 <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
@@ -410,7 +415,7 @@ function addMarker() {
       <option value="pm">PM</option>
       </select>
   </fieldset>
-  <fieldset data-role="controlgroup">
+  <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver3">Driver</label>
@@ -428,7 +433,8 @@ function addMarker() {
 </div> 
 <div data-role="page" id="thursday">
   <div data-role="header">
-    <div id="head4"></div>
+  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+    <fieldset data-role="controlgroup" data-type="horizontal"><div id="head4"></div></fieldset>
   </div>
 
   <div data-role="main" class="ui-content">
@@ -507,7 +513,7 @@ function addMarker() {
       <option value="pm">PM</option>
       </select>
   </fieldset>
-  <fieldset data-role="controlgroup">
+  <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver4">Driver</label>
@@ -525,7 +531,9 @@ function addMarker() {
 </div> 
 <div data-role="page" id="friday">
   <div data-role="header">
-    <div id="head5"></div>
+  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+  
+    <fieldset data-role="controlgroup" data-type="horizontal"><div id="head5"></div></fieldset>
   </div>
 
   <div data-role="main" class="ui-content">
@@ -604,7 +612,7 @@ function addMarker() {
       <option value="pm">PM</option>
       </select>
   </fieldset>
-  <fieldset data-role="controlgroup">
+  <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver5">Driver</label>
@@ -621,7 +629,8 @@ function addMarker() {
 </div> 
 <div data-role="page" id="saturday">
   <div data-role="header">
-    <div id="head6"></div>
+  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+    <fieldset data-role="controlgroup" data-type="horizontal"><div id="head6"></div></fieldset>
   </div>
 
   <div data-role="main" class="ui-content">
@@ -700,7 +709,7 @@ function addMarker() {
       <option value="pm">PM</option>
       </select>
   </fieldset>
-  <fieldset data-role="controlgroup">
+  <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver6">Driver</label>
@@ -718,7 +727,8 @@ function addMarker() {
 </div> 
 <div data-role="page" id="sunday">
   <div data-role="header">
-    <div id="head7"></div>
+  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+    <fieldset data-role="controlgroup" data-type="horizontal"><div id="head7"></div></fieldset>
   </div>
 
   <div data-role="main" class="ui-content">
@@ -797,7 +807,7 @@ function addMarker() {
       <option value="pm">PM</option>
       </select>
   </fieldset>
-  <fieldset data-role="controlgroup">
+  <fieldset data-role="controlgroup" data-type="horizontal">
 <!--add data-type="horizontal" for different view-->
     <legend>Role:</legend>
       <label for="driver7">Driver</label>
