@@ -15,9 +15,7 @@ function addMarker() {
     </script>
 </head>
 <body onload = "initalize()">
-  
 
-    
 <div data-role="page" id = "home">
 
     <div data-role="header">
@@ -121,7 +119,6 @@ function addMarker() {
       <input type="checkbox" name="rideday" id="sundayC" value="sunday">
   </fieldset>
   <!--css to right-->
-  <div id="errorM"></div><div id="errorA"></div>
       <a href="#monday" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="return radioCheck()"data-iconpos="right"data-role="button">Next</a> 
     </form>
     <!--end of content-->
@@ -223,8 +220,7 @@ function addMarker() {
       <label for="passenger1">Passenger</label>
       <input type="radio" name="role" id="passenger1" value="1">
   </fieldset>
-      <div class="map"></div>
-      <div id="submit1"> </div>
+
 
         
         <!--Change to next page-->
@@ -236,6 +232,7 @@ function addMarker() {
     <!--<h1>Insert Footer Text Here</h1>-->
   </div>
 </div> 
+</div>
 
 <div data-role="page" id="tuesday">
   <div data-role="header">
@@ -327,7 +324,7 @@ function addMarker() {
       <label for="passenger2">Passenger</label>
       <input type="radio" name="role" id="passenger2" value="passenger">
   </fieldset>
-  <div id="submit2"> </div>
+
     </form>
   </div>
 
@@ -335,6 +332,7 @@ function addMarker() {
     <!--<h1>Insert Footer Text Here</h1>-->
   </div>
 </div> 
+</div>
 <div data-role="page" id="wednesday">
   <div data-role="header">
   <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
@@ -425,10 +423,10 @@ function addMarker() {
       <label for="passenger3">Passenger</label>
       <input type="radio" name="role" id="passenger3" value="passenger">
   </fieldset>
-    <div id="submit3"></div>
     </div>
     </form>
   </div>
+
   <div data-role="footer">
     <!--<h1>Insert Footer Text Here</h1>-->
   </div>
@@ -524,10 +522,9 @@ function addMarker() {
       <input type="radio" name="role" id="passenger4" value="passenger">
   </fieldset>
     </div>
-      <div id="submit4"></div>
     </form>
-
   </div>
+
   <div data-role="footer">
     <!--<h1>Insert Footer Text Here</h1>-->
   </div>
@@ -624,13 +621,13 @@ function addMarker() {
       <input type="radio" name="role" id="passenger5" value="passenger">
   </fieldset>
     </form>
-    <div id="submit5"></div>
   </div>
 
   <div data-role="footer">
     <!--<h1>Insert Footer Text Here</h1>-->
   </div>
 </div> 
+</div>
 <div data-role="page" id="saturday">
   <div data-role="header">
   <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
@@ -721,7 +718,7 @@ function addMarker() {
       <label for="passenger6">Passenger</label>
       <input type="radio" name="role" id="passenger6" value="passenger">
   </fieldset>
-  <div id="submit6"></div>
+    </div>
     </form>
   </div>
 
@@ -819,8 +816,8 @@ function addMarker() {
       <label for="passenger7">Passenger</label>
       <input type="radio" name="role" id="passenger7" value="passenger">
   </fieldset>
-      <div id="submit7"></div>
-            <!--insert submit--> 
+      <input type="submit" data-inline="true" value="Submit"/>
+      <!--insert submit--> 
 
     </form>
   </div>
@@ -829,6 +826,7 @@ function addMarker() {
     <!--<h1>Insert Footer Text Here</h1>-->
   </div>
 </div> 
+</div>
 
 </body>
 </html>
