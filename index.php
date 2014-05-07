@@ -1,36 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="style/style.css">
-		<title>BCIT Ride Share</title>
-		
-		<!--CSS-->
-		<link rel="stylesheet" href="style/style.css">
-		<link rel="stylesheet" href="JS/jqueryMobile/jquery.mobile-1.4.2.css">
-
-		
-		<!--SCRIPTS-->
-		<!--JQuerry 2.1.1-->
-		<script src="JS/jquery.min.js"></script>
-		
-		<!--JQuerry Mobile 1.4.2-->
-		<script src="JS/jqueryMobile/jquery.mobile-1.4.2.min.js"></script>
-		
-		<!--Main.js file-->
-		<script src="JS/main.js"></script>
-		
-		<!--For Raty-->
-		<script type="text/javascript" src="JS/jquery.raty.min.js"></script>
-		
-		<!--Raty config-->
-		<script type="text/javascript" src="JS/profile_rating.js"></script>
-	<script>
-		function addMarker() {
-			marker.setMap(map);
-			alert("Hello");
-		}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="JS/jqueryMobile/jquery.mobile-1.4.2.css">
+<link rel="stylesheet" href="style/style.css">
+<script src="JS/jquery.min.js"></script>
+<script src="JS/jqueryMobile/jquery.mobile-1.4.2.min.js"></script>
+<script src="JS/main.js"></script>
+<script>
+function addMarker() {
+    marker.setMap(map);
+    alert("Hello");
+}
     </script>
 </head>
 <body onload = "initalize()">
@@ -140,6 +121,7 @@
       <input type="checkbox" name="rideday" id="sundayC" value="sunday">
   </fieldset>
   <!--css to right-->
+  <div id="errorM"></div><div id="errorA"></div>
       <a href="#monday" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="return radioCheck()"data-iconpos="right"data-role="button">Next</a> 
     </form>
     <!--end of content-->
@@ -241,6 +223,7 @@
       <label for="passenger1">Passenger</label>
       <input type="radio" name="role" id="passenger1" value="1">
   </fieldset>
+      <div class="map"></div>
       <div id="submit1"> </div>
 
         
