@@ -1,5 +1,13 @@
-body {
-	background-image:url('dude.jpg');
+#landing {
+	background-image: url('vroom.gif');
+	-webkit-background-size: 100%; 
+    -moz-background-size: 100%; 
+    -o-background-size: 100%; 
+    background-size: 100%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
 }
 
 .menuPanel {
@@ -18,17 +26,54 @@ a.menuLink {
     height:400px; 
     width:100%;
 }
+
+/*Leon's old card code*/
 .match {
     position:relative;
-    width:100%;
-    height:75px;
+    width:100%;  
     border: 1px solid grey;
     margin-top:25px;
+	display: block;
     
 }
+
+/*Leon's old card code*/
 .match>img{
     height:75px;
     width:75px;
     float:left;
 	margin-right:20px;
+}
+
+.ui-content-landing {
+	margin-top: 310px;
+}
+
+#greeting_msg{
+	font-size: 3em;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	padding-top: 30px;
+}
+
+img {
+	height:75px;
+    width:75px;
+}
+
+.thumbnail {
+	float: left;
+	width: 20%;
+}
+
+.card_content {
+	margin-left: 20%;
+	padding-left: 20px;
+}
+
+.card_container {
+	border: 1px solid grey;
+	margin-top: 20px;
+	min-height: 75px;
 }
