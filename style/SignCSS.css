@@ -12,15 +12,10 @@ color: #FF0000;
 font-weight: normal;
 }
 
-body {
-margin: 0px;
-width: 200px;
-padding: 100px;
-}
-
 form {
 font-weight: bold;
 padding-left: 20px;
+padding-right: 20px;
 }
 
 a {
@@ -37,15 +32,6 @@ border-radius: 1em;
 }
 
 #loginpass, #loginuser, #back, #fullname{
-padding-top: 10px;
-}
-#loginbutton{
-padding-left:110px;
-padding-top: 10px;
-}
-
-#signbutton{
-padding-left:100px;
 padding-top: 10px;
 }
 
