@@ -62,3 +62,27 @@ padding-left: 40px;
 padding-top: 10px;
 padding-left: 25px;
 }
+
+#landing {
+	background-image: url('vroom.gif');
+	-webkit-background-size: 100%; 
+    -moz-background-size: 100%; 
+    -o-background-size: 100%; 
+    background-size: 100%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+}
+
+#greeting_msg{
+	font-size: 3em;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	padding-top: 30px;
+}
+
+.ui-content-landing {
+	margin-top: 310px;
+}

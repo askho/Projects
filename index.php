@@ -35,21 +35,53 @@
 
 		<div data-role="page" id = "home">
 
-			<div data-role="header">
-			<h1>Welcome To My Homepage</h1>
+    <div data-role="header">
+		<h1>Home</h1>
 			<a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
-			</div>
+    </div>
+    
+	<div data-role="main" class="ui-content">
+			<p>You have [2] new notifications.</p>
+		<div class="card_container">
+			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod"> </div>
+			<div class="card_content">  
+				Sir Cage wants to give you a ride on Monday, Tuesday, and Thursday!
+				<br />
+		
+				<!---Accept Button--->
+				<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Accept</a>
+					<div data-role="popup" id="myPopup">
+						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+							<p>Accepted. <b>Nick Cage</b> has been notified.</p>
+					</div>
 			
-		  <div data-role="main" class="ui-content">
-			<p>I Am Now A Mobile Developer!!</p>
-		   
-
+				<!---Decline Button--->
+				<a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Decline</a>
+					<div data-role="popup" id="myPopup2">
+						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>	
+							<p>Declined. <b>Nick Cage</b> has been notified.</p>
+					</div>
 			</div>
+		</div>
+		
+		<div class = "card_container">
+			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod"> </div>
+			<div class="card_content">
+				Sir Cage declined your request for a ride for Wednesday.
+				<br /><br />
+				Sorry, I don't have class on that day.
+			<a href="#" class="button ui-btn ui-btn-inline ui-shadow">Dismiss</a>
+				<script>
+					$( ".button" ).click(function() {
+					  $(this).closest( ".card_container" ).remove();
+					});
+				</script>
+			</div>
+		</div>
+	</div>
 
-		  <div data-role="footer">
-			<h1>Footer Text</h1>
-		  </div>
-		</div> 
+
+</div> 
 		<div data-role = "page" id = "findMatches">
 			<div data-role = "header">
 				<a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
