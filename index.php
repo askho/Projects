@@ -29,6 +29,9 @@
 		
 		<!--Raty config-->
 		<script type="text/javascript" src="JS/profile_rating.js"></script>
+		
+		<!--Schedule.js for generating days-->
+		<script type="text/javascript" src="JS/schedule.js"></script>
 	</head>
 	
 	<body onload = "initalize()">
