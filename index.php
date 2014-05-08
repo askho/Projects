@@ -816,11 +816,227 @@
 
     </form>
   </div>
+  
 
-  <div data-role="footer">
-    <!--<h1>Insert Footer Text Here</h1>-->
-  </div>
 </div> 
 </div>
+		<!-- My Profile-->
+		<div data-role="page" id = "myProfile">
+		
+			<div data-role="header">
+			<h1>My Profile</h1>
+			<a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
+			</div>
+			
+			<div data-role="main" class="ui-content">
+				<img src="images\thumbnails\nickcage.jpg" alt="Profile Picture" width="100">
+				<h1>Profile Name</h1>
+				<h2>Contact Information</h2>
+				<p>Email: FakerbestmidNA@gmail.com</p>
+				<p>Phone: 604-511-1245</p>
+				
+				<!-- This is the rating bar for profiles -->
+				<div id="user_rating" class="star"></div>
+				
+				<!--Schedule Tables-->
+				
+				<!--Monday-->
+				<div data-role="collapsible">
+					<h2>Monday</h2>
+					<table data-role="table" class="ui-responsive">
+						<thead>
+							<tr>
+								<td>Role</td>
+								<td>Starting</td>
+								<td>&nbsp</td>
+								<td>Arrival</td>
+								<td>Departure</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Driver</td>
+								<td>3396 Wilkie Avenue</td>
+								<td>Coquitlam, BC</td>
+								<td>8:00am</td>
+								<td>5:30pm</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Additional information:</p>
+					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					 <div data-role="main" class="ui-content">
+						<a href="#" class="ui-btn">Send Request</a>
+					</div>
+				</div>
+				
+				<!--Tuesday-->
+				<div data-role="collapsible">
+					<table data-role="table" class="ui-responsive">
+						<thead>
+							<tr>
+								<td>Role</td>
+								<td>Starting</td>
+								<td>&nbsp</td>
+								<td>Arrival</td>
+								<td>Departure</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Driver</td>
+								<td>3396 Wilkie Avenue</td>
+								<td>Coquitlam, BC</td>
+								<td>8:00am</td>
+								<td>5:30pm</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Additional information:</p>
+					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					 <div data-role="main" class="ui-content">
+						<a href="#" class="ui-btn">Send Request</a>
+					</div>
+				</div>
+					
+				<!--Wednesday-->	
+				<div data-role="collapsible">			
+					<h2>Wednesday</h2>
+					<table data-role="table" class="ui-responsive">
+						<thead>
+							<tr>
+								<td>Role</td>
+								<td>Starting</td>
+								<td>&nbsp</td>
+								<td>Arrival</td>
+								<td>Departure</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Driver</td>
+								<td>3396 Wilkie Avenue</td>
+								<td>Coquitlam, BC</td>
+								<td>8:00am</td>
+								<td>5:30pm</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Additional information:</p>
+					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					 <div data-role="main" class="ui-content">
+						<a href="#" class="ui-btn">Send Request</a>
+					</div>
+				</div>
+				
+				<!--Thursday-->				
+				<div data-role="collapsible">
+					<h2>Thursday</h2>
+					<table data-role="table" class="ui-responsive">
+						<thead>
+							<tr>
+								<td>Role</td>
+								<td>Starting</td>
+								<td>&nbsp</td>
+								<td>Arrival</td>
+								<td>Departure</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Driver</td>
+								<td>3396 Wilkie Avenue</td>
+								<td>Coquitlam, BC</td>
+								<td>8:00am</td>
+								<td>5:30pm</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Additional information:</p>
+					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					 <div data-role="main" class="ui-content">
+						<a href="#" class="ui-btn">Send Request</a>
+					</div>
+				</div>
+				
+				<!--Friday-->				
+				<div data-role="collapsible">
+					<h2>Friday</h2>
+					<table data-role="table" class="ui-responsive">
+						<thead>
+							<tr>
+								<td>Role</td>
+								<td>Starting</td>
+								<td>&nbsp</td>
+								<td>Arrival</td>
+								<td>Departure</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Driver</td>
+								<td>3396 Wilkie Avenue</td>
+								<td>Coquitlam, BC</td>
+								<td>8:00am</td>
+								<td>5:30pm</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Additional information:</p>
+					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					 <div data-role="main" class="ui-content">
+						<a href="#" class="ui-btn">Send Request</a>
+					</div>
+				</div>
+
+				<!--Sunday-->
+				<div data-role="collapsible">
+					<h2>Sunday</h2>
+					<table data-role="table" class="ui-responsive">
+						<thead>
+							<tr>
+								<td>Role</td>
+								<td>Starting</td>
+								<td>&nbsp</td>
+								<td>Arrival</td>
+								<td>Departure</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Driver</td>
+								<td>3396 Wilkie Avenue</td>
+								<td>Coquitlam, BC</td>
+								<td>8:00am</td>
+								<td>5:30pm</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>Additional information:</p>
+					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					 <div data-role="main" class="ui-content">
+						<a href="#" class="ui-btn">Send Request</a>
+					</div>
+				</div>
+				
+				
+				<!--Comments-->
+				<h1>Comments</h1>
+				<!--Tap to load?-->
+				<!--Load 5 at a time, tap to view more?-->
+				<div data-role="main" class="ui-content">
+					<h3><img src="images\thumbnails\nickcage.jpg" alt="Profile Picture" width="40">Jack Smith</h3>
+					<p>May 16, 2019</p>
+					<p>This guy is literally late every single time. I have been 10 minutes late at best and over half an hour at worst</p>
+				</div>
+				
+				<div data-role="main" class="ui-content">
+					<h3><img src="images\thumbnails\nickcage.jpg" alt="Profile Picture" width="40">Nick Cage</h3>
+					<p>May 16, 2019</p>
+					<p>This guy is literally late every single time. I have been 10 minutes late at best and over half an hour at worst</p>
+				</div>				
+			</div>	
+		</div>
+
 </body>
 </html>
