@@ -203,9 +203,7 @@ function loadMap() {
   document.body.appendChild(script);
 }
 
-<<<<<<< HEAD
 //This piece of code will load up the map when find matches is loaded.
-=======
 //Works until you look at the page
 //maybe needs refresh function?
 function radioCheck() {
@@ -329,10 +327,6 @@ function radioCheck() {
   }
 }
 
-
-
-
->>>>>>> master
 $(document).on("pageinit","#findMatches2",function(){ 
     loadMap();
 });

@@ -7,12 +7,6 @@
 <script src="JS/jquery.min.js"></script>
 <script src="JS/jqueryMobile/jquery.mobile-1.4.2.min.js"></script>
 <script src="JS/main.js"></script>
-<script>
-function addMarker() {
-    marker.setMap(map);
-    alert("Hello");
-}
-    </script>
 </head>
 <body onload = "initalize()">
 
@@ -84,9 +78,7 @@ function addMarker() {
             Address: 1111 Burnaby Hill
         </div>
     </div>
-<<<<<<< HEAD
     <input type = "button" onclick = "grabMarkers()" value = "Add Marker">
-=======
     </div>
     <div data-role="page" id="myRideSchedule">
   <div data-role="header">
@@ -830,7 +822,5 @@ function addMarker() {
   </div>
 </div> 
 </div>
-
->>>>>>> master
 </body>
 </html>
