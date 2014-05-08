@@ -28,6 +28,19 @@ a.menuLink {
     float:left;
 }
 
-#head1, #head2, #head3, #head4, #head5, #head6, #head7 {
+#head1{
     padding-left: 50px;
+}
+#errorM, #errorA{
+    color: red;
+    font-size: small;
+}
+
+#map1 {
+    height: 500px;
+    width: 500px;
+}
+
+#day {
+    font-size: 150%;
 }
