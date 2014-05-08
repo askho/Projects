@@ -7,12 +7,6 @@
 <script src="JS/jquery.min.js"></script>
 <script src="JS/jqueryMobile/jquery.mobile-1.4.2.min.js"></script>
 <script src="JS/main.js"></script>
-<script>
-function addMarker() {
-    marker.setMap(map);
-    alert("Hello");
-}
-    </script>
 </head>
 <body onload = "initalize()">
 
@@ -41,13 +35,13 @@ function addMarker() {
     
     <div data-role = "main" class = "ui-content">
         <p>What day are you looking for specifically?</p>
-            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide">Monday</a>
-            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide">Tuesday</a>
-            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide">Wednesday</a>
-            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide">Thursday</a>
-            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide">Friday</a>
-            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide">Saturday</a>
-            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide">Sunday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('monday')">Monday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('tuesday')">Tuesday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('wednesday')">Wednesday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('thursday')">Thursday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('friday')">Friday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('saturday')">Saturday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('sunday')">Sunday</a>
     </div>
 </div>
 <div data-role = "page" id ="findMatches2">
@@ -84,6 +78,7 @@ function addMarker() {
             Address: 1111 Burnaby Hill
         </div>
     </div>
+    <input type = "button" onclick = "grabMarkers()" value = "Add Marker">
     </div>
     <div data-role="page" id="myRideSchedule">
   <div data-role="header">
@@ -827,6 +822,5 @@ function addMarker() {
   </div>
 </div> 
 </div>
-
 </body>
 </html>
