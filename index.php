@@ -142,7 +142,7 @@
 		<div data-role="page" id="myRideSchedule">
 		  <div data-role="header">
 		    <h1>My Ride Schedule</h1>
-		    <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
 		  </div>
 
 		  <div data-role="main" class="ui-content">
@@ -186,8 +186,8 @@
 		</div> 
 
 		<div data-role="page" id="schedule">
-		  <div data-role="header">
-		  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+			<div data-role="header">
+			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
 		    <fieldset data-role="controlgroup" data-type="horizontal"> <div id="head1"></div></fieldset>
 		  </div>
 
