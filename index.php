@@ -141,8 +141,8 @@
 
 		<div data-role="page" id="myRideSchedule">
 		  <div data-role="header">
-		    <h1>My Schedule</h1>
-				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
+		    <h1>My Ride Schedule</h1>
+		    <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
 		  </div>
 
 		  <div data-role="main" class="ui-content">
@@ -151,7 +151,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Role:</legend>
 		      <label for="driver">Driver</label>
-		      <input type="radio" name="role" onclick="radioCheck()" id="driver" value="0">
+		      <input type="radio" name="role" id="driver" value="0">
 		      <label for="passenger">Passenger</label>
 		      <input type="radio" name="role" id="passenger" value="1">
 		  </fieldset>
@@ -174,7 +174,7 @@
 		  </fieldset>
 		  <!--css to right-->
 		  <div id="errorM"></div><div id="errorA"></div>
-		      <a href="#schedule" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="buttonGen()" data-iconpos="right"data-role="button">Next</a> 
+		      <a href="#schedule" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="return radioCheck()" data-iconpos="right"data-role="button">Next</a> 
 		    </form>
 		    <!--end of content-->
 		  </div>
@@ -187,7 +187,7 @@
 
 		<div data-role="page" id="schedule">
 		  <div data-role="header">
-				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
+		  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
 		    <fieldset data-role="controlgroup" data-type="horizontal"> <div id="head1"></div></fieldset>
 		  </div>
 
@@ -198,6 +198,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Arrival:</legend>
 		      <select name="hour" id="hour1" data-inline="true">
+		      <option value=""></option>
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -212,6 +213,7 @@
 		      <option value="0">12</option>
 		   </select>
 		      <select name="minute" id="minute" data-inline="true">
+		      <option value=""></option>
 		      <option value="00">:00</option>
 		      <option value="05">:05</option>
 		      <option value="10">:10</option>
@@ -235,6 +237,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Departure:</legend>
 		      <select name="hour" id="dephour" data-inline="true">
+		      <option value=""></option>
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -249,6 +252,7 @@
 		      <option value="12">12</option>
 		   </select>
 		      <select name="minute" id="depminute" data-inline="true">
+		      <option value=""></option>
 		      <option value="0">:00</option>
 		      <option value="5">:05</option>
 		      <option value="10">:10</option>
@@ -271,7 +275,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Role:</legend>
 		      <label for="driver1">Driver</label>
-		      <input type="radio" name="role" id="driver1" onclick="buttonGen()"checked value="0">
+		      <input type="radio" name="role" id="driver1" checked value="0">
 		      <label for="passenger1">Passenger</label>
 		      <input type="radio" name="role" id="passenger1" value="1">
 		  </fieldset>
