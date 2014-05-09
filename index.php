@@ -142,7 +142,7 @@
 		<div data-role="page" id="myRideSchedule">
 		  <div data-role="header">
 		    <h1>My Ride Schedule</h1>
-		    <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+			<h1><img src = "JS\jqueryMobile\images\icons-png\home-white.png" width =16em alt = "Home Icon">HOME</h1>
 		  </div>
 
 		  <div data-role="main" class="ui-content">
