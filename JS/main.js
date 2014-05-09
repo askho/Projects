@@ -3,11 +3,17 @@ All of the public variables go here
 **/
 var day;
 var markers = [];
+var distances = [];
+var userid; //This is the current user's id.
+var userPosition;
+var ajaxData; //This holds the call back data retrieved from ajax call
 /**
 All of your functions go here. If something needs to be run on initialization, add it into the initalization function
 **/
 function initalize() {
     generateMenuPanel();
+    setCookie("memberid", 5, 1);
+    userid = getCookie("memberid");
 }
 
 		/** Sign up page JavaScript**/
@@ -331,7 +337,8 @@ $(document).on("pageinit","#findMatches2",function(){
     loadMap();
 });
 $(document).on("pageshow","#findMatches2",function(){ 
-   deleteMarkers();
+    deleteMarkers();
+    grabMarkers();
 });
 function createMarker(pos, t) {
     var marker = new google.maps.Marker({       
@@ -365,21 +372,29 @@ function grabMarkers() {
     data: { get_param: 'value', day : day}, 
     dataType: 'json',
     success: function (data) { 
+        ajaxData = data;
         var i = 0;
-        var lengthOfArray = data.length;
+        var lengthOfArray = data.markers.length;
         if(lengthOfArray == 0) {
             alert("No results found");
         } else {
         while(i < lengthOfArray) {
-                var location = data[i].location;
+                var location = data.markers[i].location;
+                //alert(location);
+                var memberid = data.markers[i].memberid;
                 var coord = location.split(", ");
-                var coordinate = data[i].location;
                 var position = new google.maps.LatLng(coord[0],coord[1]);
-                createMarker(position, coordinate);
+                if(memberid != userid) {
+                    createMarker(position, memberid);
+                    distances.push([data.markers[i].memberid, calculateDistance(data.currentUser[0].location, data.markers[i].location)]);
+                } else {
+                    userPosition = location;
+                }
             i++;
             }
-        }
+        sortMarkers();
         showMarkers();
+        }
     }
     });
 }
@@ -387,21 +402,40 @@ function setDate(day2) {
     day = day2;
     //alert("day is now " + day);
 }
-/*function calculateDistance(starting, ending) {
-    var coord1 = starting.split(", ");
-    var coord2 = ending.split(", ");
-    var R = 6371; // km
-    var φ1 = lat1.toRadians();
-    var φ2 = lat2.toRadians();
-    var Δφ = (lat2-lat1).toRadians();
-    var Δλ = (lon2-lon1).toRadians();
+function sortMarkers() {
+    distances = distances.sort(compareSecondColumn);
 
-    var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-            Math.cos(φ1) * Math.cos(φ2) *
-            Math.sin(Δλ/2) * Math.sin(Δλ/2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-    var d = R * c;
-    alert(d);
+function compareSecondColumn(a, b) {
+    return a[1] > b[1];
 }
-*/
+}
+function calculateDistance(starting, ending) {
+    var coord1 = starting.split(", "); //coord1[0] == lat coord1[1] == lon
+    var coord2 = ending.split(", "); 
+    var x1 = parseFloat(coord1[0]);
+    var x2 = parseFloat(coord2[0]);
+    var y1 = parseFloat(coord1[1]);
+    var y2 = parseFloat(coord2[1]);
+    //alert(x1 +" "+ y1 +" "+ x2 +" "+ y2);
+    var d = Math.sqrt((Math.pow((x2-x1),2)) + (Math.pow((y2 - y1), 2)));
+    return d
+}
+
+function setCookie(cname,cvalue,exdays)
+{
+var d = new Date();
+d.setTime(d.getTime()+(exdays*24*60*60*1000));
+var expires = "expires="+d.toGMTString();
+document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+function getCookie(cname)
+{
+var name = cname + "=";
+var ca = document.cookie.split(';');
+for(var i=0; i<ca.length; i++) 
+  {
+  var c = ca[i].trim();
+  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+return "";
+}
