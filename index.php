@@ -51,14 +51,14 @@
 				Sir Cage wants to give you a ride on Monday, Tuesday, and Thursday!
 				<br />
 		
-				<!---Accept Button--->
+				<!--Accept Button-->
 				<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Accept</a>
 					<div data-role="popup" id="myPopup">
 						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 							<p>Accepted. <b>Nick Cage</b> has been notified.</p>
 					</div>
 			
-				<!---Decline Button--->
+				<!--Decline Button-->
 				<a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Decline</a>
 					<div data-role="popup" id="myPopup2">
 						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>	
@@ -153,7 +153,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Role:</legend>
 		      <label for="driver">Driver</label>
-		      <input type="radio" name="role" onclick="radioCheck()" id="driver" value="0">
+		      <input type="radio" name="role" id="driver" value="0">
 		      <label for="passenger">Passenger</label>
 		      <input type="radio" name="role" id="passenger" value="1">
 		  </fieldset>
@@ -176,7 +176,7 @@
 		  </fieldset>
 		  <!--css to right-->
 		  <div id="errorM"></div><div id="errorA"></div>
-		      <a href="#schedule" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="buttonGen()" data-iconpos="right"data-role="button">Next</a> 
+		      <a href="#schedule" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="return radioCheck()" data-iconpos="right"data-role="button">Next</a> 
 		    </form>
 		    <!--end of content-->
 		  </div>
@@ -200,6 +200,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Arrival:</legend>
 		      <select name="hour" id="hour1" data-inline="true">
+		      <option value=""></option>
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -214,6 +215,7 @@
 		      <option value="0">12</option>
 		   </select>
 		      <select name="minute" id="minute" data-inline="true">
+		      <option value=""></option>
 		      <option value="00">:00</option>
 		      <option value="05">:05</option>
 		      <option value="10">:10</option>
@@ -237,6 +239,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Departure:</legend>
 		      <select name="hour" id="dephour" data-inline="true">
+		      <option value=""></option>
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -251,6 +254,7 @@
 		      <option value="12">12</option>
 		   </select>
 		      <select name="minute" id="depminute" data-inline="true">
+		      <option value=""></option>
 		      <option value="0">:00</option>
 		      <option value="5">:05</option>
 		      <option value="10">:10</option>
@@ -273,7 +277,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Role:</legend>
 		      <label for="driver1">Driver</label>
-		      <input type="radio" name="role" id="driver1" onclick="buttonGen()"checked value="0">
+		      <input type="radio" name="role" id="driver1" checked value="0">
 		      <label for="passenger1">Passenger</label>
 		      <input type="radio" name="role" id="passenger1" value="1">
 		  </fieldset>
