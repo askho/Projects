@@ -10,8 +10,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400,700' rel='stylesheet' type='text/css'>
 		
 		<!--CSS-->
-		<link rel="stylesheet" href="style/style.css">
 		<link rel="stylesheet" href="JS/jqueryMobile/jquery.mobile-1.4.2.css">
+		<link rel="stylesheet" href="style/style.css">
 
 		
 		<!--SCRIPTS-->
@@ -36,58 +36,56 @@
 	
 	<body onload = "initalize()">
 
-		<div data-role="page" id = "home">
-
-    <div data-role="header">
-		<h1>Home</h1>
-			<a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+	<div data-role="page" id = "home">
+    <div data-role="header" class="ui-title">
+		<h1><img src = "JS\jqueryMobile\images\icons-png\home-white.png" width =16em alt = "Home Icon">HOME</h1>
+			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
     </div>
     
-	<div data-role="main" class="ui-content">
+	<div data-role="main" class="ui-content ui-group-theme-a">
 			<p>You have [2] new notifications.</p>
 		<div class="card_container">
-			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod"> </div>
+			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>
 			<div class="card_content">  
-				Sir Cage wants to give you a ride on Monday, Tuesday, and Thursday!
-				<br />
-		
-				<!--Accept Button-->
-				<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Accept</a>
+				Sir Cage wants to give you a ride on Monday!
+				<div class="btn_container">
+				<!---Accept Button--->
+				<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline">Accept</a>
 					<div data-role="popup" id="myPopup">
 						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 							<p>Accepted. <b>Nick Cage</b> has been notified.</p>
 					</div>
-			
-				<!--Decline Button-->
-				<a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">Decline</a>
+				<!---Decline Button--->
+				<a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline">Decline</a>
 					<div data-role="popup" id="myPopup2">
 						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>	
 							<p>Declined. <b>Nick Cage</b> has been notified.</p>
 					</div>
+				</div>
 			</div>
 		</div>
 		
 		<div class = "card_container">
-			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod"> </div>
+			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>
 			<div class="card_content">
 				Sir Cage declined your request for a ride for Wednesday.
-				<br /><br />
-				Sorry, I don't have class on that day.
-			<a href="#" class="button ui-btn ui-btn-inline ui-shadow">Dismiss</a>
+				<div class="btn_container">				
+				<a href="#" class="button ui-btn ui-btn-inline">Dismiss</a>
+				<!--Closes notifcations on click of button-->
 				<script>
-					$( ".button" ).click(function() {
+					$( ".ui-btn").click(function() {
 					  $(this).closest( ".card_container" ).remove();
 					});
 				</script>
+				</div>
+			</div>
 			</div>
 		</div>
-	</div>
-
-
-</div> 
+	</div> 
+	
 		<div data-role = "page" id = "findMatches">
 			<div data-role = "header">
-				<a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
 				<h1>Find Matches</h1>
 			</div>
 			
@@ -104,7 +102,7 @@
 		</div>
 		<div data-role = "page" id ="findMatches2">
 			<div data-role = "header">
-				<a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
 				<a data-rel="back" class = "headerAlignRight">Back</a>
 				<h1>Find Matches</h1>
 			</div>
@@ -143,8 +141,8 @@
 
 		<div data-role="page" id="myRideSchedule">
 		  <div data-role="header">
-		    <h1>My Ride Schedule</h1>
-		    <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+		    <h1>My Schedule</h1>
+				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
 		  </div>
 
 		  <div data-role="main" class="ui-content">
@@ -153,7 +151,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Role:</legend>
 		      <label for="driver">Driver</label>
-		      <input type="radio" name="role" id="driver" value="0">
+		      <input type="radio" name="role" onclick="radioCheck()" id="driver" value="0">
 		      <label for="passenger">Passenger</label>
 		      <input type="radio" name="role" id="passenger" value="1">
 		  </fieldset>
@@ -176,7 +174,7 @@
 		  </fieldset>
 		  <!--css to right-->
 		  <div id="errorM"></div><div id="errorA"></div>
-		      <a href="#schedule" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="return radioCheck()" data-iconpos="right"data-role="button">Next</a> 
+		      <a href="#schedule" id="changeMe" data-inline="true" data-icon="arrow-r" onclick="buttonGen()" data-iconpos="right"data-role="button">Next</a> 
 		    </form>
 		    <!--end of content-->
 		  </div>
@@ -189,7 +187,7 @@
 
 		<div data-role="page" id="schedule">
 		  <div data-role="header">
-		  <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
 		    <fieldset data-role="controlgroup" data-type="horizontal"> <div id="head1"></div></fieldset>
 		  </div>
 
@@ -200,7 +198,6 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Arrival:</legend>
 		      <select name="hour" id="hour1" data-inline="true">
-		      <option value=""></option>
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -215,7 +212,6 @@
 		      <option value="0">12</option>
 		   </select>
 		      <select name="minute" id="minute" data-inline="true">
-		      <option value=""></option>
 		      <option value="00">:00</option>
 		      <option value="05">:05</option>
 		      <option value="10">:10</option>
@@ -239,7 +235,6 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Departure:</legend>
 		      <select name="hour" id="dephour" data-inline="true">
-		      <option value=""></option>
 		      <option value="1">1</option>
 		      <option value="2">2</option>
 		      <option value="3">3</option>
@@ -254,7 +249,6 @@
 		      <option value="12">12</option>
 		   </select>
 		      <select name="minute" id="depminute" data-inline="true">
-		      <option value=""></option>
 		      <option value="0">:00</option>
 		      <option value="5">:05</option>
 		      <option value="10">:10</option>
@@ -277,7 +271,7 @@
 		<!--add data-type="horizontal" for different view-->
 		    <legend>Role:</legend>
 		      <label for="driver1">Driver</label>
-		      <input type="radio" name="role" id="driver1" checked value="0">
+		      <input type="radio" name="role" id="driver1" onclick="buttonGen()"checked value="0">
 		      <label for="passenger1">Passenger</label>
 		      <input type="radio" name="role" id="passenger1" value="1">
 		  </fieldset>
@@ -299,8 +293,8 @@
 		<div data-role="page" id = "myProfile">
 		
 			<div data-role="header">
-			<h1>My Profile</h1>
-			<a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
+				<h1>My Profile</h1>
+				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
 			</div>
 			
 			<div data-role="main" class="ui-content">
@@ -339,7 +333,7 @@
 						</tbody>
 					</table>
 					<p>Additional information:</p>
-					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					<p>Please no smokers</p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -368,7 +362,7 @@
 						</tbody>
 					</table>
 					<p>Additional information:</p>
-					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					<p>Please no smokers</p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -398,7 +392,7 @@
 						</tbody>
 					</table>
 					<p>Additional information:</p>
-					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					<p>Please no smokers</p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -428,7 +422,7 @@
 						</tbody>
 					</table>
 					<p>Additional information:</p>
-					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					<p>Please no smokers</p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -458,7 +452,7 @@
 						</tbody>
 					</table>
 					<p>Additional information:</p>
-					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					<p>Please no smokers</p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -488,7 +482,7 @@
 						</tbody>
 					</table>
 					<p>Additional information:</p>
-					<p>Please no fat chicks or chicks with dicks. -OneTruegod</p>
+					<p>Please no smokers</p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
