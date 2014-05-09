@@ -17,5 +17,5 @@
         echo json_encode($markers);
     //}
     mysqli_close($con);
-    
+    //echo $_COOKIE["memberid"];
 ?>

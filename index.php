@@ -79,6 +79,7 @@
         </div>
     </div>
     <input type = "button" onclick = "grabMarkers()" value = "Add Marker">
+    <input type = "button" onclick = "calculateDistance('049.152451, -122.3202850 ', '049.251825, -123.0039780')" value = "Calculate Distance">
     </div>
     <div data-role="page" id="myRideSchedule">
   <div data-role="header">
