@@ -32,4 +32,5 @@
     $output = array("markers" => $markers, "currentUser" => $currentUser);    
     //echo json_encode($output);
     mysqli_close($con);
+    //echo $_COOKIE["memberid"];
 ?>
