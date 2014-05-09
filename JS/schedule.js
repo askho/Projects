@@ -8,6 +8,10 @@ All of your functions go here. If something needs to be run on initialization, a
  **/
 
 
+function submitFinal() {
+  //if days.length
+}
+
 function buttonGen() {
 for(var i = 0; i < days.length; i++) {
     $("#head1").append('<a onclick="submitFiles(' + i + ');  + dayChange(' + i + ')" data-role="button">'
@@ -18,6 +22,11 @@ for(var i = 0; i < days.length; i++) {
 
 function submitFiles(nums) {
 var hour = 0;
+if (!($('#hour1').val()) || !($('#minute').val())) 
+{
+ 
+}
+else {
   if ($("#am").val() == 'pm') {
     hour = parseInt($("#hour1").val()) + 12;
   }
@@ -27,12 +36,14 @@ var hour = 0;
   info.push(hour + $("#minute").val() + document.getElementById("day").innerHTML.substring(0,2));
   alert(info);
 }
+}
 
 function dayChange(num) {
-  document.getElementById("day").innerHTML = days[num];
+  document.getElementById("day").innerHTML = days[num].charAt(0).toUpperCase() + days[num].substring(1,days[num].length);;
 }
 
 function radioCheck() {
+  $('#head1').html('');
   var bad = 0;
   if ($('#driver').is(":checked") == false && $('#passenger').is(":checked") == false) {
     document.getElementById('errorM').innerHTML = 'Please choose a role.';
@@ -85,6 +96,10 @@ function radioCheck() {
   if (bad == 1 || days.length == 0) {
     return false;
   }
+  else {
+    document.getElementById("day").innerHTML = days[0].charAt(0).toUpperCase() + days[0].substring(1,days[0].length);
+    buttonGen();
+  }
 }
 
 $(document).on("pageinit","#schedule",function(){
@@ -92,9 +107,7 @@ $(document).on("pageinit","#schedule",function(){
 })
 
 function clearPage() {
-document.getElementById('head1').innerHTML = '';
-document.getElementById('submit1').innerHTML = '';
-
+info = [];
 $("#driver").attr("checked",false).checkboxradio("refresh");
 $("#passenger").attr("checked",false).checkboxradio("refresh");
 
@@ -112,5 +125,5 @@ $("#sundayC").attr("checked", false).checkboxradio("refresh");
 
 $(document).on("pageshow","#myRideSchedule",function() {
 clearPage();
-})
+});
 
