@@ -1,2 +1,0 @@
-{ "markers":[{"memberid":"0","location":"049.251825, -123.0039780"},{"memberid":"0","location":"049.152451, -122.3202850"},{"memberid":"2","location":"049.215760, -122.5758430"},{"memberid":"1","location":"49.214869, -123.0781140"},{"memberid":"5","location":"49.225593, -123.044176"}]}
-{ "currentUser":[{"memberid":"5","location":"49.225593, -123.044176"}]}
