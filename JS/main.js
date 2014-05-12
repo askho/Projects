@@ -366,10 +366,18 @@ function deleteMarkers() {
     markers = [];
 }
 function grabMarkers() {
+    $.mobile.loading( 'show', {
+	text: 'Loading',
+	textVisible: true,
+	theme: 'z',
+	html: ""
+    });
+    distances = [];
+    deleteMarkers();
     $.ajax({ 
     type: 'GET', 
     url: 'php/generateJsonMarkers.php', 
-    data: { get_param: 'value', day : day}, 
+    data: { get_param: 'value', day : day, direction: $('input[name="direction"]:checked').val()}, 
     dataType: 'json',
     success: function (data) { 
         ajaxData = data;
@@ -393,10 +401,21 @@ function grabMarkers() {
             i++;
             }
         sortMarkers();
-        showMarkers();
+               showRecommendations();
+            showMarkers();
+
+        //$('#recommendations').html("");
+        $('#recommendations').append("Test");
         }
+    $.mobile.loading( 'hide', {
+	text: 'Loading',
+	textVisible: true,
+	theme: 'z',
+	html: ""
+    });
     }
     });
+
 }
 function setDate(day2) {
     day = day2;
@@ -405,9 +424,9 @@ function setDate(day2) {
 function sortMarkers() {
     distances = distances.sort(compareSecondColumn);
 
-function compareSecondColumn(a, b) {
-    return a[1] > b[1];
-}
+    function compareSecondColumn(a, b) {
+        return a[1] > b[1];
+    }
 }
 function calculateDistance(starting, ending) {
     var coord1 = starting.split(", "); //coord1[0] == lat coord1[1] == lon
@@ -438,4 +457,19 @@ for(var i=0; i<ca.length; i++)
   if (c.indexOf(name)==0) return c.substring(name.length,c.length);
   }
 return "";
+}
+function showRecommendations() {
+    //var i = 0;
+        //alert(distances[1][0]);
+    /*while(i < distances.length  || i < 3) {
+        //$('#recommendations').append(
+        i++
+    }*/
+}
+function grabMarkerIndex(position) {
+    var i = 0;
+    while(ajaxData.markers[i].memberid != position) {
+        i++
+    }
+    return i;
 }

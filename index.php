@@ -51,6 +51,13 @@
         <h1>Find Matches</h1>
     </div>
     <div data-role = "main" class = "ui-content">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Arrival or Departure from BCIT?</legend>
+            <input type="radio" name="direction" id="arrival" checked="checked" value = "arrival" onclick = "grabMarkers()">
+            <label for="arrival">Arrival</label>
+            <input type="radio" name="direction" id="departure" value = "departure" onclick = "grabMarkers()"> 
+            <label for="departure">Departure</label>
+        </fieldset>
         <div id="map-canvas"></div>
         <h1>Recommendations</h1>
         <div id = "recommendations">
@@ -97,7 +104,7 @@
       <label for="driver">Driver</label>
       <input type="radio" name="role" id="driver" value="0">
       <label for="passenger">Passenger</label>
-      <input type="radio" name="role" id="passenger" value="1">
+      <input type="radio" name="role" id="passenger" value="1" >
   </fieldset>
   <fieldset data-role="controlgroup">
     <legend>Days:</legend>
