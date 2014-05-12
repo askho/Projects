@@ -24,7 +24,7 @@ button,
 .ui-btn {
 	font-size: 1em;
 	line-height: 1.3;
-	font-family: 'Open Sans' sans-serif; /*{global-font-family}*/;
+	font-family: sans-serif /*{global-font-family}*/;
 }
 legend,
 .ui-input-text input,
@@ -140,7 +140,6 @@ label.ui-btn {
 }
 /* Icons
 -----------------------------------------------------------------------------------------------------------*/
-/*Bar Icon for Menu bar*/
 .ui-btn-icon-left:after,
 .ui-btn-icon-right:after,
 .ui-btn-icon-top:after,
@@ -150,9 +149,8 @@ label.ui-btn {
 	background-color: 					rgba(0,0,0,.3) /*{global-icon-disc}*/;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: 32px;
 	-webkit-border-radius: 1em;
-	border-radius: 0em;
+	border-radius: 1em;
 }
 /* Alt icons */
 .ui-alt-icon.ui-btn:after,
@@ -222,12 +220,11 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
-	background-color: 			#0055C9 /*{a-bar-background-color}*/;
+	background-color: 			#e9e9e9 /*{a-bar-background-color}*/;
 	border-color:	 		#ddd /*{a-bar-border}*/;
-	color: 					#FFFFFF /*{a-bar-color}*/;
-	text-shadow: 0.5px /*{a-bar-shadow-x}*/ 0.5px /*{a-bar-shadow-y}*/ 0px /*{a-bar-shadow-radius}*/ 	rgba(0,0,0,0.2) /*{a-bar-shadow-color}*/;
+	color: 					#333 /*{a-bar-color}*/;
+	text-shadow: 0 /*{a-bar-shadow-x}*/ 1px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ 	#eee /*{a-bar-shadow-color}*/;
 	font-weight: bold;
-	font-size: 1.2em;
 }
 .ui-bar-a {
 	border-width: 1px;
@@ -237,7 +234,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 .ui-overlay-a,
 .ui-page-theme-a,
 .ui-page-theme-a .ui-panel-wrapper {
-	background-color: 			#FFFFFF /*{a-page-background-color}*/;
+	background-color: 			#f9f9f9 /*{a-page-background-color}*/;
 	border-color:	 		#bbb /*{a-page-border}*/;
 	color: 					#333 /*{a-page-color}*/;
 	text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shadow-radius}*/ 	#f3f3f3 /*{a-page-shadow-color}*/;
@@ -458,13 +455,10 @@ html .ui-bar-b .ui-btn:visited,
 html .ui-body-b .ui-btn:visited,
 html body .ui-group-theme-b .ui-btn:visited,
 html head + body .ui-btn.ui-btn-b:visited {
-	background-color: 			transparent /*{b-bup-background-color}*/;
-	border-color:	 		#FFF /*{b-bup-border}*/;
-	border-width:			0px;
+	background-color: 			#333 /*{b-bup-background-color}*/;
+	border-color:	 		#1f1f1f /*{b-bup-border}*/;
 	color: 					#fff /*{b-bup-color}*/;
 	text-shadow: 0 /*{b-bup-shadow-x}*/ 1px /*{b-bup-shadow-y}*/ 0 /*{b-bup-shadow-radius}*/ #111 /*{b-bup-shadow-color}*/;
-	width: 40px;
-	height: 40px;
 }
 /* Button hover */
 .ui-page-theme-b .ui-btn:hover,
