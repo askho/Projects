@@ -173,18 +173,15 @@ every single page.
 **/
 function generateMenuPanel() {
     var panel = '<div data-role="panel" class = "menuPanel" id="mypanel" data-position="left" data-display="overlay">\
-        <h1>Menu</h1>\
-        <hr />\
-        <a href = \"#home\" data-transition=\"slide\" class = \"menuLink\">Home</a>\
-        <br />\
-        <a href = \"#findMatches\" data-transition=\"slide\" class = \"menuLink\">Find Matches</a>\
-        <br />\
-        <a href = \"#myRideSchedule\" data-transition=\"slide\" class = \"menuLink\">My Ride Schedule</a>\
-        <br />\
-        <a href = \"#myProfile\" data-transition=\"slide\" class = \"menuLink\">My Profile</a>\
-		<br />\
-		<a href onclick = \"return connectSignIn()\" data-transition=\"slide\" class = \"menuLink\">Log Out</a>\
-    </div>';
+        <div class ="menutitle"><h1>Menu</h1>\</div>\
+        <a href = \"#home\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\home-white.png" width =12em alt = "Home Icon"> Home</a>\
+        <a href = \"#myProfile\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\user-white.png" width =12em alt = "Profile Icon"> My Profile</a>\
+        <a href = \"#myRideSchedule\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\calendar-white.png" width =12em alt = "Schedule Icon"> My Schedule</a>\
+        <a href = \"#findMatches\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\search-white.png" width =12em alt = "Find Icon"> Find Matches</a>\
+		<a href = \"#editProfile\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\edit-white.png" width =12em alt = "Edit Icon"> Edit Profile</a>\
+		<a href = \"#settings\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\gear-white.png" width =12em alt = "Settings Icon"> Settings</a>\
+		<a href onclick = \"return connectSignIn()\" data-transition=\"slide\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\arrow-l-white.png" width =12em alt = "Logout Icon"> Log Out</a>\
+		</div>';
   $.mobile.pageContainer.prepend(panel);
   $("#mypanel").panel();
 }

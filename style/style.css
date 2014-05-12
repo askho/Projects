@@ -1,12 +1,32 @@
 .menuPanel {
-    background-color: white;
+    background-color: #2F2F2F;
+	color: #0055c9;
+	font-weight: 400;
+	text-shadow: none;
 }
-a.menuLink {
-    color: #3388cc;
+
+.menuPanel h1 {
+	font-weight: 300;
+	margin: 0;
+	padding-left: .5em;
+	background-color: #FFFFFF;
+}
+
+.menuLink {
+	font-size: 1.2em;
+    color: #FFF;
     text-decoration: none;
     display: block;
-    padding:10px;
+    padding:10px 10px 10px 20px;
+	margin-top: 3px;
+	background-color: #0055C9;
+	text-shadow:none;
 }
+a.menuLink:active{background-color:#959595;
+						text-shadow: none;}
+a.menuLink:hover{background-color: #959595;
+				text-shadow: none;}
+
 .headerAlignRight {
     right:5px;
 }
@@ -28,6 +48,57 @@ a.menuLink {
     float:left;
 }
 
-#head1, #head2, #head3, #head4, #head5, #head6, #head7 {
+#head1{
     padding-left: 50px;
+}
+#errorM, #errorA{
+    color: red;
+    font-size: small;
+}
+
+#map1 {
+    height: 500px;
+    width: 500px;
+}
+
+#day {
+    font-size: 150%;
+}
+
+.thumbnail {
+	float: left;
+}
+.thumbnail img{
+	display:block;
+	height: 72px;
+	width: 72px;
+	border-right: 3px solid #0055c9;
+}
+
+.card_content {
+	margin-right: .5em;
+	margin-left: 7em;
+	font-size: 1em;
+	padding-top: .2em;
+}
+
+.card_container {
+	position: relative;
+	border: 3px solid #0055c9;
+	margin-top: 20px;
+	height: 72px;
+}
+
+.btn_container {
+	position: absolute;
+	right: 0;
+}
+
+/*Rating Bar*/
+.star {
+margin: auto;
+width: 100%;
+}
+.star img{
+width: 1em;
 }
