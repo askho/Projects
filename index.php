@@ -49,13 +49,13 @@
 			<div class="card_content">  
 				Sir Cage wants to give you a ride on Monday!
 				<div class="btn_container">
-				<!---Accept Button--->
+				<!--Accept Button-->
 				<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline">Accept</a>
 					<div data-role="popup" id="myPopup">
 						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
 							<p>Accepted. <b>Nick Cage</b> has been notified.</p>
 					</div>
-				<!---Decline Button--->
+				<!--Decline Button-->
 				<a href="#myPopup2" data-rel="popup" class="ui-btn ui-btn-inline">Decline</a>
 					<div data-role="popup" id="myPopup2">
 						<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>	
@@ -214,18 +214,18 @@
 		   </select>
 		      <select name="minute" id="minute" data-inline="true">
 		      <option value=""></option>
-		      <option value="00">:00</option>
-		      <option value="05">:05</option>
-		      <option value="10">:10</option>
-		      <option value="15">:15</option>
-		      <option value="20">:20</option>
-		      <option value="25">:25</option>
-		      <option value="30">:30</option>
-		      <option value="35">:35</option>
-		      <option value="40">:40</option>
-		      <option value="45">:45</option>
-		      <option value="50">:50</option>
-		      <option value="55">:55</option>
+		      <option value=":00">:00</option>
+		      <option value=":05">:05</option>
+		      <option value=":10">:10</option>
+		      <option value=":15">:15</option>
+		      <option value=":20">:20</option>
+		      <option value=":25">:25</option>
+		      <option value=":30">:30</option>
+		      <option value=":35">:35</option>
+		      <option value=":40">:40</option>
+		      <option value=":45">:45</option>
+		      <option value=":50">:50</option>
+		      <option value=":55">:55</option>
 		   </select>
 		   <select name="am" id="am" data-inline="true">
 		      <option value="am">AM</option>
@@ -253,18 +253,18 @@
 		   </select>
 		      <select name="minute" id="depminute" data-inline="true">
 		      <option value=""></option>
-		      <option value="0">:00</option>
-		      <option value="5">:05</option>
-		      <option value="10">:10</option>
-		      <option value="15">:15</option>
-		      <option value="20">:20</option>
-		      <option value="25">:25</option>
-		      <option value="30">:30</option>
-		      <option value="35">:35</option>
-		      <option value="40">:40</option>
-		      <option value="45">:45</option>
-		      <option value="50">:50</option>
-		      <option value="55">:55</option>   
+		      <option value=":00">:00</option>
+		      <option value=":05">:05</option>
+		      <option value=":10">:10</option>
+		      <option value=":15">:15</option>
+		      <option value=":20">:20</option>
+		      <option value=":25">:25</option>
+		      <option value=":30">:30</option>
+		      <option value=":35">:35</option>
+		      <option value=":40">:40</option>
+		      <option value=":45">:45</option>
+		      <option value=":50">:50</option>
+		      <option value=":55">:55</option>   
 		   </select>
 		   <select name="am" id="depam" data-inline="true">
 		      <option value="am">AM</option>
@@ -278,9 +278,11 @@
 		      <input type="radio" name="role" id="driver1" checked value="0">
 		      <label for="passenger1">Passenger</label>
 		      <input type="radio" name="role" id="passenger1" value="1">
+
 		  </fieldset>
+		      <input type="button" id="next" data-role="button" onclick="submitFiles();dayChange(1)" value="Next">
 		      <div id="map1"></div>
-		      <div id="submit1"> </div>
+		      
 
 		        
 		        <!--Change to next page-->
