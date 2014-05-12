@@ -42,7 +42,6 @@
 			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
     </div>
     
-<<<<<<< HEAD
   <div data-role="main" class="ui-content">
     <p>I Am Now A Mobile Developer!!</p>
    
@@ -852,7 +851,6 @@
 
     </form>
   </div>
-=======
 	<div data-role="main" class="ui-content ui-group-theme-a">
 			<p>You have [2] new notifications.</p>
 		<div class="card_container">
@@ -1323,7 +1321,6 @@
 				</div>				
 			</div>	
 		</div>
->>>>>>> master
 
 </body>
 </html>
