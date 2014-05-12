@@ -460,7 +460,7 @@ return "";
 }
 function showRecommendations() {
     //var i = 0;
-        //alert(distances[1][0]);
+    alert(distances[1][0]);
     /*while(i < distances.length  || i < 3) {
         //$('#recommendations').append(
         i++
