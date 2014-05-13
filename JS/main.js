@@ -12,6 +12,7 @@ All of your functions go here. If something needs to be run on initialization, a
 **/
 function initalize() {
     generateMenuPanel();
+    setCookie("memberid",5,1);
 }
 
 		/** Sign up page JavaScript**/
@@ -394,12 +395,9 @@ function grabMarkers() {
                 }
             i++;
             }
-        sortMarkers();
-               showRecommendations();
+            sortMarkers();
+            showRecommendations();
             showMarkers();
-
-        //$('#recommendations').html("");
-        $('#recommendations').append("Test");
         }
     $.mobile.loading( 'hide', {
 	text: 'Loading',
@@ -453,16 +451,25 @@ for(var i=0; i<ca.length; i++)
 return "";
 }
 function showRecommendations() {
-    //var i = 0;
-        //alert(distances[1][0]);
-    /*while(i < distances.length  || i < 3) {
-        //$('#recommendations').append(
-        i++
-    }*/
-}
-function grabMarkerIndex(position) {
     var i = 0;
-    while(ajaxData.markers[i].memberid != position) {
+    $('#recommendations').html("");
+    while(i < distances.length  || i < 3) {
+        var memberid = grabMarkerIndex(distances[i][0]);
+        var name = ajaxData.markers[memberid].first + " " + ajaxData.markers[memberid].last;
+        var address = ajaxData.markers[memberid].address;
+        $('#recommendations').append("<div class = \"match\">" +
+            "<img src = \"images/thumbnails/nickcage.jpg\" alt = \"oneTrueGod\">" +
+            name +
+            "<br />" +
+            address +
+        "</div>");
+        i++
+    }
+}
+function grabMarkerIndex(position1) {
+    var i = 0;
+    position = parseInt(position1);
+    while(parseInt(ajaxData.markers[i].memberid) != position) {
         i++
     }
     return i;

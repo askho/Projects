@@ -9,6 +9,7 @@
     while($row = mysqli_fetch_array($result)) {
         $departure = $row['departtime'];
         $arrival = $row['arrivaltime'];
+        $role = $row['role'];
     }
     if($_GET['direction'] == "arrival") {
         $time  = $arrival;
@@ -24,9 +25,9 @@
     $time=strtotime("$time");
     $timeVariance = $time-1800;
     $markers = array();
-    $request = "SELECT profile.memberid, profile.first, profile.last, profile.email, " .  $_GET['day']. ".location FROM " . $_GET['day'] 
+    $request = "SELECT profile.memberid, profile.first, profile.last, profile.email, " .  $_GET['day']. ".location, " . $_GET['day'].".address FROM " . $_GET['day'] 
         . " INNER JOIN profile ON profile.memberid = " . $_GET['day'] . ".memberid WHERE profile.memberid != ".$_COOKIE["memberid"] 
-        . " AND " . $direction . " BETWEEN \"" . date("H:i", $timeVariance) . "\" AND \"" . date("H:i",$time)."\"";
+        . " AND " . $direction . " BETWEEN \"" . date("H:i", $timeVariance) . "\" AND \"" . date("H:i",$time)."\" AND role != " . $role;
 
     //echo $request;
     $result = mysqli_query($con, $request);
