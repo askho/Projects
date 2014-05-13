@@ -862,7 +862,6 @@ label.ui-btn {
 	background-color: 					rgba(0,0,0,.3) /*{global-icon-disc}*/;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: 32px;
 	-webkit-border-radius: 0em;
 	border-radius: 0em;
 	
@@ -935,11 +934,13 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit { 
+	padding: 0.5em 0em;
 	background-color: 			#0055C9/*{a-bar-background-color}*/;
 	border-color:	 		#ddd /*{a-bar-border}*/;
 	color: 					#FFF /*{a-bar-color}*/;
-	text-shadow: 0 /*{a-bar-shadow-x}*/ 0px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ 	#000 /*{a-bar-shadow-color}*/;
+	text-shadow: 0 /*{a-bar-shadow-x}*/ 0 /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ 	#000 /*{a-bar-shadow-color}*/;
 	font-weight: 300;
+	box-shadow: 0px 1px 3px 1px #2F2F2F;
 }
 .ui-bar-a {
 	border-width: 1px;
@@ -976,7 +977,7 @@ html .ui-bar-a a,
 html .ui-body-a a,
 html body .ui-group-theme-a a {
 	color: #3388cc /*{a-link-color}*/;
-	font-weight: bold;
+	font-weight: 300;
 }
 .ui-page-theme-a a:visited,
 html .ui-bar-a a:visited,
@@ -1508,7 +1509,7 @@ div.ui-mobile-viewport {
 }
 /* Buttons and icons */
 .ui-btn {
-	font-size: 0.8em;
+	font-size: 1em;
 	margin: .5em 0;
 	padding: .7em 1em;
 	display: block;
@@ -1526,7 +1527,6 @@ div.ui-mobile-viewport {
 .ui-btn-icon-notext {
 	padding: 0;
 	width: 3em;
-	height: 100%;
 	text-indent: -9999px;
 	white-space: nowrap !important;
 }
@@ -1649,7 +1649,7 @@ div.ui-mobile-viewport {
 	top: 0;
 	left: 0;
 }
-.ui-btn-icon-notext.ui-btn-right {
+.ui-btn-icon-notext.ui-btn-right.ui-icon-delete{
 	top: .3125em;
 	right: .3125em;
 }
