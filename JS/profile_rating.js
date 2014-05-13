@@ -5,15 +5,23 @@ $(function(data){
 	
 
 //Load a blank rating until data is fetched
-	$('.star').raty({});
+	$('.star').raty({ width:110});
+	
+	
 	
 
 //Retrieve the average score for profile first.
 	$.get('php/profile_rating.php',
 	function(data){
 		
+	
 		//Activate Raty divs with class star
 		$('.star').raty({
+		
+			width  : false,
+			
+			size   : 24,
+			
 			number: 5,
 			
 			score: data,
