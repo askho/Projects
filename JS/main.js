@@ -12,6 +12,7 @@ All of your functions go here. If something needs to be run on initialization, a
 **/
 function initalize() {
     generateMenuPanel();
+    setCookie("memberid",5,1);
 }
 
 		/** Sign up page JavaScript**/
@@ -453,15 +454,21 @@ for(var i=0; i<ca.length; i++)
 return "";
 }
 function showRecommendations() {
-    //var i = 0;
-        //alert(distances[1][0]);
-    /*while(i < distances.length  || i < 3) {
-        //$('#recommendations').append(
-        i++
-    }*/
-}
-function grabMarkerIndex(position) {
     var i = 0;
+    while(i < distances.length  || i < 3) {
+        
+        //var memberid = grabMarkerIndex(distances[i][0]);
+        alert(grabMarkerIndex(3));
+        //alert(memberid);
+        //alert(ajaxData.markers[memberid].first);
+        //$('#recommendations').append(ajaxData.markers[memberid].first);
+        i++
+    }
+}
+function grabMarkerIndex(position1) {
+    var i = 0;
+    position = parseInt(position1);
+    alert(ajaxData.markers[i].memberid);
     while(ajaxData.markers[i].memberid != position) {
         i++
     }
