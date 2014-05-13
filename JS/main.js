@@ -395,12 +395,9 @@ function grabMarkers() {
                 }
             i++;
             }
-        sortMarkers();
-               showRecommendations();
+            sortMarkers();
+            showRecommendations();
             showMarkers();
-
-        //$('#recommendations').html("");
-        $('#recommendations').append("Test");
         }
     $.mobile.loading( 'hide', {
 	text: 'Loading',
@@ -455,21 +452,24 @@ return "";
 }
 function showRecommendations() {
     var i = 0;
+    $('#recommendations').html("");
     while(i < distances.length  || i < 3) {
-        
-        //var memberid = grabMarkerIndex(distances[i][0]);
-        alert(grabMarkerIndex(3));
-        //alert(memberid);
-        //alert(ajaxData.markers[memberid].first);
-        //$('#recommendations').append(ajaxData.markers[memberid].first);
+        var memberid = grabMarkerIndex(distances[i][0]);
+        var name = ajaxData.markers[memberid].first + " " + ajaxData.markers[memberid].last;
+        var address = ajaxData.markers[memberid].address;
+        $('#recommendations').append("<div class = \"match\">" +
+            "<img src = \"images/thumbnails/nickcage.jpg\" alt = \"oneTrueGod\">" +
+            name +
+            "<br />" +
+            address +
+        "</div>");
         i++
     }
 }
 function grabMarkerIndex(position1) {
     var i = 0;
     position = parseInt(position1);
-    alert(ajaxData.markers[i].memberid);
-    while(ajaxData.markers[i].memberid != position) {
+    while(parseInt(ajaxData.markers[i].memberid) != position) {
         i++
     }
     return i;

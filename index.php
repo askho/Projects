@@ -116,35 +116,10 @@
         <div id="map-canvas"></div>
         <h1>Recommendations</h1>
         <div id = "recommendations">
-        <div class = "match">
-        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-            Nick Cage:
-            <br />
-            Address: 1111 Burnaby Hill
-        </div>
-                <div class = "match">
-        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-            Nick Cage:
-            <br />
-            Address: 1111 Burnaby Hill
-        </div>
-                <div class = "match">
-        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-            Nick Cage:
-            <br />
-            Address: 1111 Burnaby Hill
-        </div>
-        <div class = "match">
-        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-            Nick Cage:
-            <br />
-            Address: 1111 Burnaby Hill
-        </div>
+
         </div>
     </div>
-    <input type = "button" onclick = "grabMarkers()" value = "Add Marker">
-    <input type = "button" onclick = "calculateDistance('049.152451, -122.3202850 ', '049.251825, -123.0039780')" value = "Calculate Distance">
-    </div>
+</div>
 		
 
 
