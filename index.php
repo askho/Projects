@@ -82,60 +82,69 @@
 			</div>
 		</div>
 	</div> 
-	
-		<div data-role = "page" id = "findMatches">
-			<div data-role = "header">
-				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
-				<h1>Find Matches</h1>
-			</div>
-			
-			<div data-role = "main" class = "ui-content">
-				<p>What day are you looking for specifically?</p>
-					<a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('monday')">Monday</a>
-					<a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('tuesday')">Tuesday</a>
-					<a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('wednesday')">Wednesday</a>
-					<a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('thursday')">Thursday</a>
-					<a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('friday')">Friday</a>
-					<a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('saturday')">Saturday</a>
-					<a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('sunday')">Sunday</a>
-			</div>
-		</div>
-		<div data-role = "page" id ="findMatches2">
-			<div data-role = "header">
-				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
-				<a data-rel="back" class = "headerAlignRight">Back</a>
-				<h1>Find Matches</h1>
-			</div>
-			<div data-role = "main" class = "ui-content">
-				<div id="map-canvas"></div>
-				<h1>Recommendations</h1>
-				<div class = "match">
-				<img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-					Nick Cage:
-					<br />
-					Address: 1111 Burnaby Hill
-				</div>
-						<div class = "match">
-				<img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-					Nick Cage:
-					<br />
-					Address: 1111 Burnaby Hill
-				</div>
-						<div class = "match">
-				<img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-					Nick Cage:
-					<br />
-					Address: 1111 Burnaby Hill
-				</div>
-				<div class = "match">
-				<img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
-					Nick Cage:
-					<br />
-					Address: 1111 Burnaby Hill
-				</div>
-			</div>
-			<input type = "button" onclick = "grabMarkers()" value = "Add Marker">
-		</div>
+<div data-role = "page" id = "findMatches">
+    <div data-role = "header">
+        <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+        <h1>Find Matches</h1>
+    </div>
+    
+    <div data-role = "main" class = "ui-content">
+        <p>What day are you looking for specifically?</p>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('monday')">Monday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('tuesday')">Tuesday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('wednesday')">Wednesday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('thursday')">Thursday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('friday')">Friday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('saturday')">Saturday</a>
+            <a href="#findMatches2" class="ui-btn ui-shadow" data-transition="slide" onclick = "setDate('sunday')">Sunday</a>
+    </div>
+</div>	
+<div data-role = "page" id ="findMatches2">
+    <div data-role = "header">
+        <a href="#mypanel" data-role="button" class = "ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all">Home</a>
+        <a data-rel="back" class = "headerAlignRight">Back</a>
+        <h1>Find Matches</h1>
+    </div>
+    <div data-role = "main" class = "ui-content">
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Arrival or Departure from BCIT?</legend>
+            <input type="radio" name="direction" id="arrival" checked="checked" value = "arrival" onclick = "grabMarkers()">
+            <label for="arrival">Arrival</label>
+            <input type="radio" name="direction" id="departure" value = "departure" onclick = "grabMarkers()"> 
+            <label for="departure">Departure</label>
+        </fieldset>
+        <div id="map-canvas"></div>
+        <h1>Recommendations</h1>
+        <div id = "recommendations">
+        <div class = "match">
+        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
+            Nick Cage:
+            <br />
+            Address: 1111 Burnaby Hill
+        </div>
+                <div class = "match">
+        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
+            Nick Cage:
+            <br />
+            Address: 1111 Burnaby Hill
+        </div>
+                <div class = "match">
+        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
+            Nick Cage:
+            <br />
+            Address: 1111 Burnaby Hill
+        </div>
+        <div class = "match">
+        <img src = "images/thumbnails/nickcage.jpg" alt = "oneTrueGod">
+            Nick Cage:
+            <br />
+            Address: 1111 Burnaby Hill
+        </div>
+        </div>
+    </div>
+    <input type = "button" onclick = "grabMarkers()" value = "Add Marker">
+    <input type = "button" onclick = "calculateDistance('049.152451, -122.3202850 ', '049.251825, -123.0039780')" value = "Calculate Distance">
+    </div>
 		
 
 
