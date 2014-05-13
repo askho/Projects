@@ -1,6 +1,6 @@
 <?php
     $host = "localhost";
     $user = "root";
-    $password = "root";
+    $password = "password1";
     $database = "group1_BCIT";
 ?>
