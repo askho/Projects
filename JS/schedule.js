@@ -19,7 +19,7 @@ All of your functions go here. If something needs to be run on initialization, a
 
 function buttonGen() {
 for (var i = 0; i < days.length; i++) {
-    $("#head1").append('<input type="button" onclick="submitFiles();dayChange(' + i + ');loadInfo();" data-role="button" value="'
+    $("#header_schedule").append('<input type="button" onclick="submitFiles();dayChange(' + i + ');loadInfo();" data-role="button" value="'
      + days[i].charAt(0).toUpperCase() + days[i].substring(1,3) + '"></div>');
 }
 }
