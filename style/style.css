@@ -3,12 +3,15 @@
 	color: #0055c9;
 	font-weight: 400;
 	text-shadow: none;
+	box-shadow: 0px 1px 3px 1px #2F2F2F;
 }
 
 .menuPanel h1 {
 	font-weight: 300;
 	margin: 0;
 	padding-left: .5em;
+	padding-top: .5em;
+	padding-bottom: .5em;
 	background-color: #FFFFFF;
 }
 
@@ -48,9 +51,14 @@ a.menuLink:hover{background-color: #959595;
     float:left;
 }
 
-#head1{
-    padding-left: 50px;
+#header_schedule{
+    padding-left: 48px;
 }
+.ui-btn.ui-btn-inline.day_buttons{
+height: 100%;
+margin: 0;
+}
+
 #errorM, #errorA{
     color: red;
     font-size: small;
@@ -65,44 +73,165 @@ a.menuLink:hover{background-color: #959595;
     font-size: 150%;
 }
 
+/*Styling for Notifications*/
+.card_container {
+	position: relative;
+	background-color: #FFFFFF;
+	box-shadow: 1.5px 1.5px 2px -1px #2F2F2F;
+	margin-bottom: 5px;
+}
+
 .thumbnail {
 	float: left;
 }
+
 .thumbnail img{
 	display:block;
 	height: 72px;
 	width: 72px;
-	border-right: 3px solid #0055c9;
 }
 
 .card_content {
-	margin-right: .5em;
-	margin-left: 7em;
-	font-size: 1em;
-	padding-top: .2em;
-}
-
-.card_container {
 	position: relative;
-	border: 3px solid #0055c9;
-	margin-top: 20px;
-	height: 72px;
+	padding: 5px 30px 5px 80px;
 }
 
-.btn_container {
+.card_content p {
+	margin: 0;
+	font-size: 1.2em;
+	color: #000;
+	font-weight: 300;
+	text-shadow: none;
+}
+
+/*Special Button Container and Button Settings*/
+
+/*Menu Bar Icon*/
+.ui-btn.ui-btn-icon-notext.ui-nodisc-icon.ui-icon-bars {
+	height: 100%;
+	background-color: #2F2F2F;
+}
+
+.ui-btn.ui-btn-icon-notext.ui-nodisc-icon.ui-icon-bars:hover {
+	height: 100%;
+	background-color: #3388cc;
+
+	}
+.ui-icon-bars:after {
+	background-size: 2em;
+}
+/*Delete Notification Button*/
+.ui-btn-icon-notext.ui-btn-right.ui-icon-delete {
+	height: 30px;
+	width: 30px;
 	position: absolute;
+	top: 0;
 	right: 0;
+	margin: 0px
+}
+
+/*Back Button*/
+#headerAlignRight{
+	height: 100%;
+	top: 0;
+	right: 0;
+}
+/*Profile Page Styling*/
+.profile_main {
+	position: relative;
+	background-color: #FFFFFF;
+}
+
+.profile_main h1{
+	font-weight: 300;
+	text-shadow: none;
+	color: #FFF;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	margin: 0;
+	background-color: #0055C9;
+}
+
+.profile_main h2{
+	font-size: 1.5em;
+	font-weight: 300;
+	margin: 10px 10px 0 0;
+}
+
+.profile_main h3{
+	font-size: 1.2em;
+	margin: 15px 0px 0px 0px;
+	font-weight: 300;
+}
+
+.profile_info h3{
+	padding: 0px 5px;
+	margin: 0;
+}
+
+
+.profile_main p{
+	font-weight: 300;
+	padding: 5px 5px;
+	margin: 0;
+}
+
+.profile_contact{
+}
+
+.profile_img {
+	float: left;
+	margin: 10px;
+}
+
+#photo{
+	display: block;
+	width: 100px;
+	height: 120px;
+	border: 2px solid #333;
+}
+
+.profile_info{
+	margin: 5px 10px;
+}
+
+/*Profile Comments*/
+
+.profile_comments{
+	background-color: #FFF;
+}
+.profile_comments h1{
+	font-weight: 300;
+	text-shadow: none;
+	color: #FFF;
+	padding-left: 5px;
+	padding-bottom: 3px;
+	margin: 0;
+	background-color: #0055C9;
+}
+
+.profile_comments{
+	font-weight: 300;
+}
+
+.profile_comments h3{
+	font-weight: 300;
+}
+
+.comment_container{
+	margin: 0 15px;
+}
+
+.comment_thumbnail{
+	float: left;
+	margin-right: 10px;
 }
 
 /*Rating Bar*/
 .star {
-margin: auto;
-width: 100%;
+	float: left;
+	padding-top: 10px;
 }
-.star img{
-width: 1em;
-}
-#mapcanvas3 {    
-    height: 350px;
-    width:100%;
+.star img {
+	width: 18px;
 }
