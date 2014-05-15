@@ -12,7 +12,9 @@ All of your functions go here. If something needs to be run on initialization, a
 
 function buttonGen() {
 for (var i = 0; i < days.length; i++) {
-    $("#head1").append('<input type="button" onclick="submitFiles(); dayChange(' + i + ')" data-role="button" value="'
+    
+	
+	$("#header_schedule").append('<input type="button" class="ui-btn ui-btn-inline" onclick="submitFiles(); dayChange(' + i + ')" data-role="button" value="'
      + days[i].charAt(0).toUpperCase() + days[i].substring(1,3) + '">');
 }
 }
@@ -144,14 +146,9 @@ if (bad == 0 && days.length != 0) {
   }
 }
 }
-
-$(document).on("pageinit","#schedule",function(){
-  loadMap();
-})
-
 function clearPage() {
 days = [];
-$("#head1").html('');  
+$("#header_schedule").html('');  
 info = [];
 $("#driver").attr("checked",false).checkboxradio("refresh");
 $("#passenger").attr("checked",false).checkboxradio("refresh");

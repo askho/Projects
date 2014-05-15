@@ -934,7 +934,6 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit { 
-	padding: 0.5em 0em;
 	background-color: 			#0055C9/*{a-bar-background-color}*/;
 	border-color:	 		#ddd /*{a-bar-border}*/;
 	color: 					#FFF /*{a-bar-color}*/;
@@ -950,7 +949,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 .ui-overlay-a,
 .ui-page-theme-a,
 .ui-page-theme-a .ui-panel-wrapper {
-	background-color: 			#FFFFFF /*{a-page-background-color}*/;
+	background-color: 			#DDDDDD /*{a-page-background-color}*/;
 	border-color:	 		#bbb /*{a-page-border}*/;
 	color: 					#333 /*{a-page-color}*/;
 	text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shadow-radius}*/ 	#f3f3f3 /*{a-page-shadow-color}*/;
@@ -1475,7 +1474,7 @@ div.ui-mobile-viewport {
 	min-height: 1.1em;
 	text-align: center;
 	display: block;
-	margin: 0 30%;
+	margin: 0 25%;
 	padding: .2em 0;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -1511,7 +1510,7 @@ div.ui-mobile-viewport {
 .ui-btn {
 	font-size: 1em;
 	margin: .5em 0;
-	padding: .7em 1em;
+	padding: .5em 1em;
 	display: block;
 	position: relative;
 	text-align: center;

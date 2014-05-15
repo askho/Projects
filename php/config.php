@@ -1,6 +1,6 @@
 <?php
     $host = "localhost";
-    $user = "root";
-    $password = "password1";
-    $database = "group1_BCIT";
+    $user = "group1_main";
+    $password = "rideshare";
+    $database = "group1_WebApp";
 ?>

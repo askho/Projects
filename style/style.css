@@ -51,9 +51,14 @@ a.menuLink:hover{background-color: #959595;
     float:left;
 }
 
-#head1{
-    padding-left: 50px;
+#header_schedule{
+    padding-left: 48px;
 }
+.ui-btn.ui-btn-inline.day_buttons{
+height: 100%;
+margin: 0;
+}
+
 #errorM, #errorA{
     color: red;
     font-size: small;
@@ -125,6 +130,12 @@ a.menuLink:hover{background-color: #959595;
 	margin: 0px
 }
 
+/*Back Button*/
+#headerAlignRight{
+	height: 100%;
+	top: 0;
+	right: 0;
+}
 /*Profile Page Styling*/
 .profile_main {
 	position: relative;
@@ -182,7 +193,6 @@ a.menuLink:hover{background-color: #959595;
 
 .profile_info{
 	margin: 5px 10px;
-	float: left;
 }
 
 /*Profile Comments*/
@@ -198,6 +208,14 @@ a.menuLink:hover{background-color: #959595;
 	padding-bottom: 3px;
 	margin: 0;
 	background-color: #0055C9;
+}
+
+.profile_comments{
+	font-weight: 300;
+}
+
+.profile_comments h3{
+	font-weight: 300;
 }
 
 .comment_container{
