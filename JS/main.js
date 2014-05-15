@@ -7,6 +7,9 @@ var distances = [];
 var userid; //This is the current user's id.
 var userPosition;
 var ajaxData; //This holds the call back data retrieved from ajax call
+var map3loaded = 0; //This tells if map 3 has been loaded yet.
+var directionsDisplay;
+var directionsService;
 /**
 All of your functions go here. If something needs to be run on initialization, add it into the initalization function
 **/
@@ -204,215 +207,137 @@ function loadMap() {
     + 'callback=initializeMap';
   document.body.appendChild(script);
 }
+//This initalizes the map to be loaded when load map is called
+function initializeMap3() {
+    var mapOptions = {
+        zoom: 12,
+        center: new google.maps.LatLng(49.251825, -123.003978)
+    };
 
-//This piece of code will load up the map when find matches is loaded.
-//Works until you look at the page
-//maybe needs refresh function?
-function radioCheck() {
-  if ($('#driver').is(":checked") == false && $('#passenger').is(":checked") == false) {
-  }
-  if ($('#driver').is(":checked") == true) {
-    $("#driver1").attr("checked",true);
-    $("#driver2").attr("checked",true);
-    $("#driver3").attr("checked",true);
-    $("#driver4").attr("checked",true);
-    $("#driver5").attr("checked",true);
-    $("#driver6").attr("checked",true);
-    $("#driver7").attr("checked",true);
-    }
-
-  else if ($('#passenger').is(":checked") == true) {
-    $("#passenger1").attr("checked",true);
-    $("#passenger2").attr("checked",true);
-    $("#passenger3").attr("checked",true);
-    $("#passenger4").attr("checked",true);
-    $("#passenger5").attr("checked",true);
-    $("#passenger6").attr("checked",true);
-    $("#passenger7").attr("checked",true);  }
-  var checked = 0;
-  //used to check if anything has been checked.  If nothing is checked wont proceed.
-  if ($("#mondayC").is(":checked")) {
-    checked++;
-    $("#head1").append('<a href="#monday" data-role="button">Mon</a>');
-    $("#head2").append('<a href="#monday" data-role="button">Mon</a>');
-    $("#head3").append('<a href="#monday" data-role="button">Mon</a>');
-    $("#head4").append('<a href="#monday" data-role="button">Mon</a>');
-    $("#head5").append('<a href="#monday" data-role="button">Mon</a>');
-    $("#head6").append('<a href="#monday" data-role="button">Mon</a>');
-    $("#head7").append('<a href="#monday" data-role="button">Mon</a>');
-  }
-  if ($('#tuesdayC').is(":checked")) {
-    checked++;
-    $("#head1").append('<a href="#tuesday" data-role="button">Tue</a>');
-    $("#head2").append('<a href="#tuesday" data-role="button">Tue</a>');
-    $("#head3").append('<a href="#tuesday" data-role="button">Tue</a>');
-    $("#head4").append('<a href="#tuesday" data-role="button">Tue</a>');
-    $("#head5").append('<a href="#tuesday" data-role="button">Tue</a>');
-    $("#head6").append('<a href="#tuesday" data-role="button">Tue</a>');
-    $("#head7").append('<a href="#tuesday" data-role="button">Tue</a>');
-  }
-  if ($('#wednesdayC').is(":checked")) {
-    checked++;
-    $("#head1").append('<a href="#wednesday" data-role="button">Wed</a>');
-    $("#head2").append('<a href="#wednesday" data-role="button">Wed</a>');
-    $("#head3").append('<a href="#wednesday" data-role="button">Wed</a>');
-    $("#head4").append('<a href="#wednesday" data-role="button">Wed</a>');
-    $("#head5").append('<a href="#wednesday" data-role="button">Wed</a>');
-    $("#head6").append('<a href="#wednesday" data-role="button">Wed</a>');
-    $("#head7").append('<a href="#wednesday" data-role="button">Wed</a>');
-  }
-  if ($('#thursdayC').is(":checked")) {
-    checked++;
-    $("#head1").append('<a href="#thursday" data-role="button">Thu</a>');
-    $("#head2").append('<a href="#thursday" data-role="button">Thu</a>');
-    $("#head3").append('<a href="#thursday" data-role="button">Thu</a>');
-    $("#head4").append('<a href="#thursday" data-role="button">Thu</a>');
-    $("#head5").append('<a href="#thursday" data-role="button">Thu</a>');
-    $("#head6").append('<a href="#thursday" data-role="button">Thu</a>');
-    $("#head7").append('<a href="#thursday" data-role="button">Thu</a>');
-  }
-  if ($('#fridayC').is(":checked")) {
-    checked++;
-    $("#head1").append('<a href="#friday" data-role="button">Fri</a>');
-    $("#head2").append('<a href="#friday" data-role="button">Fri</a>');
-    $("#head3").append('<a href="#friday" data-role="button">Fri</a>');
-    $("#head4").append('<a href="#friday" data-role="button">Fri</a>');
-    $("#head5").append('<a href="#friday" data-role="button">Fri</a>');
-    $("#head6").append('<a href="#friday" data-role="button">Fri</a>');
-    $("#head7").append('<a href="#friday" data-role="button">Fri</a>');
-  }
-  if ($('#saturdayC').is(":checked")) {
-    checked++;
-    $("#head1").append('<a href="#saturday" data-role="button">Sat</a>');
-    $("#head2").append('<a href="#saturday" data-role="button">Sat</a>');
-    $("#head3").append('<a href="#saturday" data-role="button">Sat</a>');
-    $("#head4").append('<a href="#saturday" data-role="button">Sat</a>');
-    $("#head5").append('<a href="#saturday" data-role="button">Sat</a>');
-    $("#head6").append('<a href="#saturday" data-role="button">Sat</a>');
-    $("#head7").append('<a href="#saturday" data-role="button">Sat</a>');
-  }
-  if ($('#sundayC').is(":checked")) {
-    checked++;
-    $("#head1").append('<a href="#sunday" data-role="button">Sun</a>');
-    $("#head2").append('<a href="#sunday" data-role="button">Sun</a>');
-    $("#head3").append('<a href="#sunday" data-role="button">Sun</a>');
-    $("#head4").append('<a href="#sunday" data-role="button">Sun</a>');
-    $("#head5").append('<a href="#sunday" data-role="button">Sun</a>');
-    $("#head6").append('<a href="#sunday" data-role="button">Sun</a>');
-    $("#head7").append('<a href="#sunday" data-role="button">Sun</a>');
-  }
-  if (checked == 0) {
-    alert('Please select a day');
-  }
-  var location = document.getElementById('changeMe');
-
-    if ($('#sundayC').is(":checked")) {
-    location.setAttribute('href', '#sunday');
-  }
-    if ($('#saturdayC').is(":checked")) { 
-    location.setAttribute('href', '#saturday');
-  }
-    if ($('#fridayC').is(":checked")) { 
-    location.setAttribute('href', '#friday');
-  }
-    if ($('#thursdayC').is(":checked")) { 
-    location.setAttribute('href', '#thursday');
-  }
-    if ($('#wednesdayC').is(":checked")) { 
-    location.setAttribute('href', '#wednesday');
-  }
-    if ($('#tuesdayC').is(":checked")) { 
-    location.setAttribute('href', '#tuesday');
-  }
-    if ($('#mondayC').is(":checked")) { 
-    location.setAttribute('href', '#monday');
-  }
+    this.map3 = new google.maps.Map(document.getElementById('mapcanvas3'), mapOptions);
+    //directionsDisplay.setPanel(document.getElementById('directions-panel'));
+    var trafficLayer = new google.maps.TrafficLayer();
+    trafficLayer.setMap(map3);
+    google.maps.event.trigger(map3, "resize");
+    loadDirectionService();
+    grabRouteData();
+    //calcRoute();
 }
-$(document).on("pageinit","#findMatches2",function(){ 
+//The map has to be loaded asynchronously because of jquery limitation.
+//This is called when findMatches2 is initalized.
+function loadMap3() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBwRtXAgSKxxKwyhnMoMNIS-8FsVpfQ1EU&sensor=false&' + 'callback=initializeMap3';
+    document.body.appendChild(script);
+}
+//This piece of code will load up the map when find matches is loaded.
+$(document).on("pageinit", "#findMatches2", function () {
     loadMap();
 });
-$(document).on("pageshow","#findMatches2",function(){ 
+$(document).on("pageshow", "#showRoutes", function () {
+    if(map3loaded != 1) {
+        loadMap3();
+        map3loaded = 1;
+    }
+    var mapheight = $(window).height() * .75
+    $(mapcanvas3).height(mapheight);
+    $( "#directions-panel" ).hide();
+});
+$(document).on("pageshow", "#findMatches2", function () {
     deleteMarkers();
     grabMarkers();
 });
+
 function createMarker(pos, t) {
-    var marker = new google.maps.Marker({       
-    position: pos, 
-    title: t      
-    }); 
-    google.maps.event.addListener(marker, 'click', function() { 
-       alert("I am marker " + marker.title); 
-    }); 
+    var marker = new google.maps.Marker({
+        position: pos,
+        title: t
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        alert("I am marker " + marker.title);
+    });
     markers.push(marker);
-    return marker; 
+    return marker;
 }
+
 function showMarkers() {
-    for(var i = 0; i < markers.length; i++) {
+    for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(map);
     }
 }
+
 function hideMarkers() {
-    for(var i = 0; i < markers.length; i++) {
+    for (var i = 0; i < markers.length; i++) {
         markers[i].setMap(null);
     }
 }
+
 function deleteMarkers() {
     hideMarkers();
     markers = [];
 }
+
 function grabMarkers() {
-    $.mobile.loading( 'show', {
-	text: 'Loading',
-	textVisible: true,
-	theme: 'z',
-	html: ""
+    $.mobile.loading('show', {
+        text: 'Loading',
+        textVisible: true,
+        theme: 'z',
+        html: ""
     });
     distances = [];
     deleteMarkers();
-    $.ajax({ 
-    type: 'GET', 
-    url: 'php/generateJsonMarkers.php', 
-    data: { get_param: 'value', day : day, direction: $('input[name="direction"]:checked').val()}, 
-    dataType: 'json',
-    success: function (data) { 
-        ajaxData = data;
-        var i = 0;
-        var lengthOfArray = data.markers.length;
-        if(lengthOfArray == 0) {
-            alert("No results found");
-        } else {
-        while(i < lengthOfArray) {
-                var location = data.markers[i].location;
-                //alert(location);
-                var memberid = data.markers[i].memberid;
-                var coord = location.split(", ");
-                var position = new google.maps.LatLng(coord[0],coord[1]);
-                if(memberid != userid) {
-                    createMarker(position, memberid);
-                    distances.push([data.markers[i].memberid, calculateDistance(data.currentUser[0].location, data.markers[i].location)]);
-                } else {
-                    userPosition = location;
+    $.ajax({
+        type: 'GET',
+        url: 'php/generateJsonMarkers.php',
+        data: {
+            get_param: 'value',
+            day: day,
+            direction: $('input[name="direction"]:checked').val()
+        },
+        dataType: 'json',
+        success: function (data) {
+            ajaxData = data;
+            alert("success");
+            var i = 0;
+            var lengthOfArray = data.markers.length;
+            if (lengthOfArray == 0) {
+                alert("No results found");
+            } else {
+                while (i < lengthOfArray) {
+                    var location = data.markers[i].location;
+                    //alert(location);
+                    var memberid = data.markers[i].memberid;
+                    var coord = location.split(", ");
+                    var position = new google.maps.LatLng(coord[0], coord[1]);
+                    if (memberid != userid) {
+                        createMarker(position, memberid);
+                        distances.push([data.markers[i].memberid, calculateDistance(data.currentUser[0].location, data.markers[i].location)]);
+                    } else {
+                        userPosition = location;
+                    }
+                    i++;
                 }
-            i++;
+                sortMarkers();
+                showRecommendations();
+                showMarkers();
             }
-            sortMarkers();
-            showRecommendations();
-            showMarkers();
+            $.mobile.loading('hide', {
+                text: 'Loading',
+                textVisible: true,
+                theme: 'z',
+                html: ""
+            });
         }
-    $.mobile.loading( 'hide', {
-	text: 'Loading',
-	textVisible: true,
-	theme: 'z',
-	html: ""
-    });
-    }
     });
 
 }
+
 function setDate(day2) {
     day = day2;
     //alert("day is now " + day);
 }
+
 function sortMarkers() {
     distances = distances.sort(compareSecondColumn);
 
@@ -420,40 +345,40 @@ function sortMarkers() {
         return a[1] > b[1];
     }
 }
+
 function calculateDistance(starting, ending) {
     var coord1 = starting.split(", "); //coord1[0] == lat coord1[1] == lon
-    var coord2 = ending.split(", "); 
+    var coord2 = ending.split(", ");
     var x1 = parseFloat(coord1[0]);
     var x2 = parseFloat(coord2[0]);
     var y1 = parseFloat(coord1[1]);
     var y2 = parseFloat(coord2[1]);
     //alert(x1 +" "+ y1 +" "+ x2 +" "+ y2);
-    var d = Math.sqrt((Math.pow((x2-x1),2)) + (Math.pow((y2 - y1), 2)));
+    var d = Math.sqrt((Math.pow((x2 - x1), 2)) + (Math.pow((y2 - y1), 2)));
     return d
 }
 
-function setCookie(cname,cvalue,exdays)
-{
-var d = new Date();
-d.setTime(d.getTime()+(exdays*24*60*60*1000));
-var expires = "expires="+d.toGMTString();
-document.cookie = cname + "=" + cvalue + "; " + expires;
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
 }
-function getCookie(cname)
-{
-var name = cname + "=";
-var ca = document.cookie.split(';');
-for(var i=0; i<ca.length; i++) 
-  {
-  var c = ca[i].trim();
-  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-  }
-return "";
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
 }
+
 function showRecommendations() {
     var i = 0;
     $('#recommendations').html("");
-    while(i < distances.length  || i < 3) {
+    while (i < distances.length && i < 3) {
         var memberid = grabMarkerIndex(distances[i][0]);
         var name = ajaxData.markers[memberid].first + " " + ajaxData.markers[memberid].last;
         var address = ajaxData.markers[memberid].address;
@@ -462,15 +387,76 @@ function showRecommendations() {
             name +
             "<br />" +
             address +
-        "</div>");
+            "</div>");
         i++
     }
 }
+
 function grabMarkerIndex(position1) {
     var i = 0;
     position = parseInt(position1);
-    while(parseInt(ajaxData.markers[i].memberid) != position) {
+    while (parseInt(ajaxData.markers[i].memberid) != position) {
         i++
     }
     return i;
+}
+function loadDirectionService() {
+    directionsService = new google.maps.DirectionsService();
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay.setMap(map3);
+    directionsDisplay.setPanel(document.getElementById('directions-panel'));
+}
+function grabRouteData() {
+        $.ajax({
+        type: 'GET',
+        url: 'php/generateRoutes.php',
+        data: {
+            get_param: 'value',
+            day: 'monday',
+            direction: 'arrival',
+            memberid: 5
+        },
+        dataType: 'json',
+        success: function (data) {
+            ajaxData = data;
+            calcRoute();
+        }
+    });
+}
+function calcRoute() {
+    var waypts = [];
+    var start1 = 0;
+    var start2 = 0;
+        for (var i = 0; i < ajaxData.length; i++) {
+        var coord = ajaxData[i].location.split(", ");
+            if(ajaxData[i].role == 0) {
+                start1 = coord[0];
+                start2 = coord[1];
+            }
+            waypts.push({
+            location:new google.maps.LatLng(coord[0], coord[1]),
+            stopover:true});
+    }
+    var start = new google.maps.LatLng(start1, start2);
+    var end = new google.maps.LatLng(049.251825, -123.0039780);
+    var request = {
+      origin: start,
+      destination: end,
+      waypoints: waypts,
+      optimizeWaypoints: true,
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+function showMap() {
+    $( "#directions-panel" ).hide(300);
+    $( "#mapcanvas3" ).show(300);
+}
+function showDirections() {
+    $( "#directions-panel" ).show(300);
+    $( "#mapcanvas3" ).hide(300);
 }

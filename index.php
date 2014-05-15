@@ -43,6 +43,7 @@
     
 	<div data-role="main" class="ui-content ui-group-theme-a">
 			<p>You have [2] new notifications.</p>
+			<a href = "#showRoutes">Show routes</a>
 		<div class="card_container">
 			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>
 			
@@ -508,6 +509,25 @@
 				</div>
 			</div>	
 		</div>
+   <div data-role="page" id="showRoutes">
+        <div data-role="header">
+            <a class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars"
+            data-role="button" href="#mypanel">Home</a>
 
+            <h1>Route</h1>
+        </div>
+
+        <div class="ui-content" data-role="main">
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <input checked="checked" id="showmap" name="showType" onclick=
+                "showMap()" type="radio" value="showmap"> <label for=
+                "showmap">Map</label> <input id="showDirections" name=
+                "showType" onclick="showDirections()" type="radio" value=
+                "showDirections"> <label for="showDirections">Directions</label>
+            </fieldset>
+            <div id="mapcanvas3"></div>
+            <div id="directions-panel"></div>
+        </div>
+    </div>
 </body>
 </html>
