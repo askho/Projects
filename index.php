@@ -162,7 +162,7 @@
 		<div data-role="page" id="schedule">
 			<div data-role="header">
 			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
-		    <fieldset data-role="controlgroup" data-type="horizontal"> <div id="head1"></div></fieldset>
+		    <fieldset data-role="controlgroup" data-type="horizontal"> <div id="header_schedule"></div></fieldset>
 		  </div>
 
 		  <div data-role="main" class="ui-content">

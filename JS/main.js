@@ -10,6 +10,7 @@ var ajaxData; //This holds the call back data retrieved from ajax call
 var map3loaded = 0; //This tells if map 3 has been loaded yet.
 var directionsDisplay;
 var directionsService;
+var profileID;
 /**
 All of your functions go here. If something needs to be run on initialization, add it into the initalization function
 **/
@@ -248,6 +249,9 @@ $(document).on("pageshow", "#findMatches2", function () {
     deleteMarkers();
     grabMarkers();
 });
+$(document).on("pageshow", "#myProfile", function () {
+    alert(profileID);
+});
 
 function createMarker(pos, t) {
     var marker = new google.maps.Marker({
@@ -255,7 +259,9 @@ function createMarker(pos, t) {
         title: t
     });
     google.maps.event.addListener(marker, 'click', function () {
-        alert("I am marker " + marker.title);
+        //alert("I am marker " + marker.title);
+        profileID=marker.title;
+        window.location = "#myProfile";
     });
     markers.push(marker);
     return marker;
@@ -298,7 +304,6 @@ function grabMarkers() {
         dataType: 'json',
         success: function (data) {
             ajaxData = data;
-            alert("success");
             var i = 0;
             var lengthOfArray = data.markers.length;
             if (lengthOfArray == 0) {
@@ -382,12 +387,14 @@ function showRecommendations() {
         var memberid = grabMarkerIndex(distances[i][0]);
         var name = ajaxData.markers[memberid].first + " " + ajaxData.markers[memberid].last;
         var address = ajaxData.markers[memberid].address;
-        $('#recommendations').append("<div class = \"match\">" +
-            "<img src = \"images/thumbnails/nickcage.jpg\" alt = \"oneTrueGod\">" +
-            name +
-            "<br />" +
-            address +
-            "</div>");
+        $('#recommendations').append("<a href = \"#myProfile\" onclick=\"profileID=" + distances[i][0] + "\">" +
+            "<div class=\"card_container\">" +
+            "<div class=\"thumbnail\"> <img src = \"images/thumbnails/nickcage.jpg\" width = 72px alt = \"oneTrueGod\"> </div>" +
+            "<div class=\"card_content\">"+
+                "<p>" + name + "<br />" + address + "</p>"+
+            "</div>"+
+            "</div>"+
+            "</a>" );
         i++
     }
 }
