@@ -5,7 +5,7 @@ $(function(data){
 	
 
 //Load a blank rating until data is fetched
-	$('.star').raty({width:120});
+	$('.star').raty({});
 	
 
 //Retrieve the average score for profile first.
