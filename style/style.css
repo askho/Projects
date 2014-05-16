@@ -64,9 +64,9 @@ margin: 0;
     font-size: small;
 }
 
-#map1 {
-    height: 500px;
-    width: 500px;
+#goodMap {
+    height: 300px;
+    width: 100%;
 }
 
 #day {
