@@ -79,6 +79,7 @@ margin: 0;
 	background-color: #FFFFFF;
 	box-shadow: 1.5px 1.5px 2px -1px #2F2F2F;
 	margin-bottom: 5px;
+	min-height: 75px;
 }
 
 .thumbnail {
