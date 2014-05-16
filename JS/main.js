@@ -470,7 +470,8 @@ function showDirections() {
 
 //Updates profile page of other users on load
 $(document).on("pagebeforeshow","#profile",function(){ // When entering profile
-	$('#profile').load('																																															./php/profile.php',function(){
-		$('#profile').trigger('create');
+	$.post( "profile.php", { memberid: profileID }).done(function( data ) {
+	$('#profile').load('./php/profile.php');																																											./php/profile.php',function(){
+	$('#profile').trigger('create');
 	});
 });
