@@ -29,15 +29,22 @@
 		<div data-role="header" id="head">
 			<h1>Sign In</h1>
 		</div>
-	<form>
+	<form data-ajax="false" action="php/login.php" method="post">
 		<div id="loginuser">
 			Username <br><input type="text" name="username" id="usersignIn"><br>
 		</div>
 		<div id="loginpass">
 			Password <br><input type="password" name="password" id="passsignIn"><br>
 		</div>
+		<span id = "warning">
+            <?php
+				if(isset($_GET['fail'])) {
+					echo "*Username or Password was incorrect";   
+                }
+            ?>    
+        </span>
 		<div id="loginbutton">
-			<a onclick="return connectMain()" class="ui-btn">Login</a><br>
+			<input type="submit" class="ui-btn" value="Login" id="button"></input><br>
 		</div>
 	</form>
 		<div id="back">
@@ -55,7 +62,7 @@
 		</div>
 		<div data-role="main" class"ui-content">
 		<div id="background">
-			<form onsubmit="return formValidate()">
+			<form data-ajax="false" onsubmit="return formValidate()" action="signUp.php" method="post">
 				<div id="fullname">
 					Name <span id="errName"></span><input type="text" name="firstname" id="firstname" placeholder="First" size=20>
 					<input type="text" name="lastname" id="lastname" placeholder="Last" size=20><br>
@@ -73,6 +80,13 @@
 					Email (@my.bcit.ca) <span id="errEmail"></span><input type="text" name="email" id="email"><br>
 				</div>
 			<div id="missingEle"></div>
+			<span id = "warning">
+				<?php
+					if(isset($_GET['error'])){                        
+						echo $_GET['error'];
+					}
+				?>
+			</span>
 			<div id="signbutton">
 				<input type="submit" value="Sign Up" id="button"><br>
 			</div>

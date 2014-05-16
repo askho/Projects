@@ -81,14 +81,14 @@ function formValidate() {
 	return test;
 }
 
-function connectMain() {
-	window.location.href = "index.php";
+function RunSignOUT() {
+	location.href = 'php/Signout.php';
 }
 
-function connectSignIn() {
-	window.location.href = "start.html";
+function SignUpDone() {
+	window.location.href = "../start.php";
 }
-		
+	
 //Test name to see if it only contains characters and is filled out
 function testNameEmpty() {
 	var first = document.getElementById('firstname').value;
@@ -183,7 +183,7 @@ function generateMenuPanel() {
         <a href = \"#findMatches\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\search-white.png" width =12em alt = "Find Icon"> Find Matches</a>\
 		<a href = \"#editProfile\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\edit-white.png" width =12em alt = "Edit Icon"> Edit Profile</a>\
 		<a href = \"#settings\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\gear-white.png" width =12em alt = "Settings Icon"> Settings</a>\
-		<a href onclick = \"return connectSignIn()\" data-transition=\"slide\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\arrow-l-white.png" width =12em alt = "Logout Icon"> Log Out</a>\
+		<a href onclick = \"RunSignOUT()\" data-transition=\"slide\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\arrow-l-white.png" width =12em alt = "Logout Icon"> Log Out</a>\
 		</div>';
   $.mobile.pageContainer.prepend(panel);
   $("#mypanel").panel();
@@ -260,7 +260,7 @@ function createMarker(pos, t) {
     });
     google.maps.event.addListener(marker, 'click', function () {
         //alert("I am marker " + marker.title);
-        profileID=marker.title;
+	 profileID=marker.title;
         window.location = "#myProfile";
     });
     markers.push(marker);
@@ -387,15 +387,15 @@ function showRecommendations() {
         var memberid = grabMarkerIndex(distances[i][0]);
         var name = ajaxData.markers[memberid].first + " " + ajaxData.markers[memberid].last;
         var address = ajaxData.markers[memberid].address;
-        $('#recommendations').append("<a href = \"#myProfile\" onclick=\"profileID=" + distances[i][0] + "\">" +
-            "<div class=\"card_container\">" +
-            "<div class=\"thumbnail\"> <img src = \"images/thumbnails/nickcage.jpg\" width = 72px alt = \"oneTrueGod\"> </div>" +
-            "<div class=\"card_content\">"+
-                "<p>" + name + "<br />" + address + "</p>"+
-            "</div>"+
-            "</div>"+
-            "</a>" );
-        i++
+	$('#recommendations').append("<a href = \"#myProfile\" onclick=\"profileID=" + distances[i][0] + "\">" +
+			"<div class=\"card_container\">" +
+			"<div class=\"thumbnail\"> <img src = \"images/thumbnails/nickcage.jpg\" width = 72px alt = \"oneTrueGod\"> </div>" +
+			"<div class=\"card_content\">"+
+				"<p>" + name + "<br />" + address + "</p>"+
+			"</div>"+
+			"</div>"+
+			"</a>" );
+	i++
     }
 }
 
