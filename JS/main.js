@@ -469,14 +469,14 @@ function showDirections() {
 }
 
 //Updates profile page of other users on load
-$(document).on("pagebeforeshow","#myProfile",function(){ // When entering profile
+$(document).on("pagebeforeshow","#profile",function(){ // When entering profile
 	$.post("./php/profile.php",
 		{
 			memberid : profileID
 		},
 		function(data){
-			$("#myProfile").html(data);
-			$('#myProfile').trigger('create');
+			$("#profile").html(data);
+			$('#profile').trigger('create');
 		});
 });
 
