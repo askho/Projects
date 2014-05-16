@@ -13,6 +13,8 @@ var info = [];
 var currentday = 1;
 var ran = 0;
 var depinfo = [];
+var nInfo = [];
+
 /**
 All of your functions go here. If something needs to be run on initialization, add it into the initalization function
  **/
@@ -35,7 +37,7 @@ else {
   else {
     hour = $("#hour1").val();
   }
-  info.push(hour + $("#minute").val() + document.getElementById("day").innerHTML.substring(0,2));
+  info[currentday-1] = (hour + $("#minute").val() + document.getElementById("day").innerHTML.substring(0,2));
 }
   if (!($('#dephour').val()) || !($('#depminute').val())) {}
     else {
@@ -51,6 +53,44 @@ else {
 sortInfo();
 }
 
+
+
+function orderInfo() {
+  var cInfo = [];
+  for (var i = 0; i < info.length; i++) {
+    cInfo = info[i].substring(info[i].length-2, info[i].length);
+    if (cInfo == 'Mo') {
+      nInfo[0] = info[i].substring(0, info[i].length-2);
+      nInfo[1] = 'monday';
+    }
+    else if (cInfo == 'Tu') {
+      nInfo[2] = info[i].substring(0, info[i].length-2);
+      nInfo[3] = 'tuesday';
+    }
+    else if (cInfo == 'We') {
+      nInfo[4] = info[i].substring(0, info[i].length-2);
+      nInfo[5] = 'wednesday';
+    }
+    else if (cInfo == 'Th') {
+      nInfo[6] = info[i].substring(0, info[i].length-2);
+      nInfo[7] = 'thursday';
+    }
+    else if (cInfo == 'Fr') {
+      nInfo[8] = info[i].substring(0, info[i].length-2);
+      nInfo[9] = 'friday';
+    }
+    else if (cInfo == 'Sa') {
+      nInfo[10] = info[i].substring(0, info[i].length-2);
+      nInfo[11] = 'saturday';
+    }
+    else if (cInfo == 'Su') {
+      nInfo[12] = info[i].substring(0, info[i].length-2);
+      nInfo[13] = 'sunday';
+    }
+  }
+}
+
+
 function loadInfo() {
   for (var i = 0; i < info.length; i++) {
       if (document.getElementById("day").innerHTML.substring(0,2) == info[i].substring(info[i].length-2, info[i].length)) {
@@ -60,9 +100,6 @@ function loadInfo() {
         } else {
          document.getElementById("hour1").value = info[i].substring(0,info[i].length - 5);
          document.getElementById("am").value = "am";}
-         rsmarker.setMap(null);
-         map2.setCenter(rslatlong[currentday - 1]);
-         holdmarker[currentday - 1].setMap(map2);
          document.getElementById("minute").value = info[i].substring(info[i].length - 5,info[i].length - 2);
          $('#hour1').selectmenu('refresh', true);
          $('#minute').selectmenu('refresh', true);
@@ -84,7 +121,14 @@ function loadInfo() {
          $('#depam').selectmenu('refresh', true);
     }
   }
-} 
+/*      for (var i = 0; i < holdmarker.length; i++) {
+        
+        holdmarker[i].setMap(null); }
+        if ( holdmarker.length > currentday -1) {
+         map2.setCenter(rslatlong[currentday - 1]);
+         holdmarker[currentday-1].setMap(map2);
+      }*/
+}
 
 function sortInfo() {
 var count = 0;
@@ -92,7 +136,6 @@ var count = 0;
     for (var a = info.length - 1; a > i; a--) {
       if ((info[i].substring(info[i].length-2, info[i].length) == info[a].substring(info[a].length-2, info[a].length)) && a != i ){
         info.splice(i,1);
-        holdmarker.splice(i,1);
       }
     }
   }
@@ -103,9 +146,6 @@ var count = 0;
       }
     }
   }
-
-
-  alert(info);
 }
 //add submit files to next button
 function dayChange(num) {
@@ -117,17 +157,34 @@ function dayChange(num) {
     $("#next").val("Next");
     $("#next").button("refresh");}
   else {
-    $("#next").attr("onclick", "finalSubmit()");
+    $("#next").attr("onclick", "submitFiles();finalSubmit()");
     $("#next").val("Submit");
     $("#next").button("refresh");
   }
 }
+
 function finalSubmit(){
 // do stuff
-alert("bananas");
+var daystr;
+var today;
+var address;
+orderInfo();
+for (var i = 0; i < nInfo.length; i += 2) {
+  if ( nInfo[i] != null ) {
+    daystr = nInfo[i];
+    today = nInfo[i+1];
+    address = rsaddress[i/2];
+$.ajax({
+  type: 'GET',
+  url: 'php/schedule.php',
+  data: {curday: today, dayinf: daystr, caddress: address},
+  success: function(data) {
+  }
+
+  });
 }
-
-
+}
+}
 function radioCheck() {
   if (!$('#driver').is(":checked") && !$('#passenger').is(":checked")) {
     document.getElementById('errorM').innerHTML = 'Please choose a role.';
@@ -184,6 +241,10 @@ if (bad == 0 && days.length != 0 && ran == 0) {
     return false;
   }
 }
+if (days.length == 1) { 
+    $("#next").attr("onclick", "submitFiles();finalSubmit()");
+    $("#next").val("Submit");
+}
 }
 
 
@@ -193,7 +254,7 @@ rsaddress = [];
 rslatlong = [];
 rsmarker;
 holdmarker = [];
-$("#head1").html('');  
+$("#header_schedule").html('');  
 info = [];
 depinfo = [];
 ran = 0;
@@ -262,13 +323,13 @@ map2count++;
         map2.setCenter(results[0].geometry.location);
         rsaddress[currentday - 1] = address;
         rslatlong[currentday - 1] = results[0].geometry.location;
-        holdmarker[currentday - 1] = marker;
+
         var marker = new google.maps.Marker({
             map2: map2,
             position: results[0].geometry.location,
             title: address 
         });
-
+        holdmarker[currentday-1] = marker;
         marker.setMap(map2);
         rsmarker = marker;
       }
