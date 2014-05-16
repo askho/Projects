@@ -254,8 +254,12 @@
 		      <input type="radio" name="role" id="passenger1" value="1">
 
 		  </fieldset>
+		        <label for="area">Location:</label>
+		  <fieldset data-inline="true">
+    		<input type="text" name="location" columns="10"  id="address" value="" ><input data-role="button" type="button" value="Set Location" onclick="codeAddress()">
+    		</fieldset>
+		  <div id="goodMap"></div>
 		      <input type="button" id="next" data-role="button" onclick="submitFiles();dayChange(1)" value="Next">
-		      <div id="map1"></div>
 		      
 
 		        
