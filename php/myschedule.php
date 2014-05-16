@@ -1,13 +1,9 @@
 <?php
-include 'config.php';
-//connection to the database
-$dbhandle = mysql_connect($host, $user, $password)
-  or die("Couldn't connect to SQL Server on $myServer"); 
-
-//select a database to work with
-$selected = mysql_select_db($database, $dbhandle)
-  or die("Couldn't open database $myDB"); 
- 
+    require('config.php');
+    $con = mysqli_connect($host, $user, $password, $database);
+    if(mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL:" . mysqli_connect_error();
+ 	}
 $mymemberid = 2;
 //$_COOKIE['varname'];
 

@@ -1,10 +1,10 @@
 <?php
 
-	$con = mysqli_connect("localhost", "root", "", "students");
-
-	if (mysqli_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-	}
+    require('config.php');
+    $con = mysqli_connect($host, $user, $password, $database);
+    if(mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL:" . mysqli_connect_error();
+    }
 
 	$user = $_POST["username"];
 	$pass = $_POST["password"];

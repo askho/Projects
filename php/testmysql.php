@@ -1,14 +1,14 @@
 <?php
-mysql_connect("localhost", "root", "root", "group1_BCIT") or
-    die("Could not connect: " . mysql_error());
-mysql_select_db("rideshare") or
-	die("Could not connect: " . mysql_error());
+    require('config.php');
+    $con = mysqli_connect($host, $user, $password, $database);
+    if(mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL:" . mysqli_connect_error();
+    }
 
 $request = "SELECT first,day FROM requests INNER JOIN profile ON requests.requesterid = profile.memberid";
 //echo $request;
-$result = mysql_query("SELECT first,day FROM requests
-INNER JOIN profile ON requests.requesterid = profile.memberid");
-while ($row = mysql_fetch_object($result)) {
+$result = mysqli_query("SELECT first,day FROM requests INNER JOIN profile ON requests.requesterid = profile.memberid", $con);
+while ($row = mysqli_fetch_object($result)) {
 	$obj[] = $row;
 	}
 	
