@@ -270,6 +270,8 @@
 		</div> 
 		
 		<!-- My Profile-->
+		<?php include './php/myprofile.php';?>
+		<?php include './php/myschedule.php';?> 
 		<div data-role="page" id = "myProfile">
 			<div data-role="header">
 				<h1><img src = "JS\jqueryMobile\images\icons-png\user-white.png" height =14em alt = "Profile Icon"> My Profile</h1>
@@ -279,7 +281,7 @@
 			<div data-role="main" class="ui-content">
 			
 				<div class="profile_main">
-					<h1>Nicholas Cage</h1>
+					<h1><?php echo $name?></h1>
 					<div class="profile_img">
 						<img id="photo" src="images\thumbnails\nickcage.jpg" alt="Profile Picture">
 						<!-- This is the rating bar for profiles -->
@@ -287,15 +289,16 @@
 					</div>
 					<div class="profile_contact">
 						<h2>Contact Info<hr></h2>
-						<h3>Email</h3>
-						<p>FakerbestmidNA@gmail.com</p>
-						<h3>Phone</h3>
-						<p>604-511-1244</p>
+						<h3>Email:</h3>
+						<p><?php echo $email?></p>
+						<h3>Phone:</h3>
+						<p><?php echo $phone?></p>
 					</div>
 					<div class="profile_info">
+						<br/>
 						<h3>About me</h3>
 						<hr>
-						<p>Hello I am a great actor who would like to offer students rides. I don't smoke. I am on time. I would prefer someone who is equally punctual</p>
+						<p><?php echo $info?></p>
 					</div>
 					<br style="clear:both;">
 				</div>
@@ -308,25 +311,23 @@
 					<table data-role="table" class="ui-responsive">
 						<thead>
 							<tr>
-								<td>Role</td>
-								<td>Starting</td>
-								<td>&nbsp</td>
-								<td>Arrival</td>
-								<td>Departure</td>
+								<td>Role:</td>
+								<td>Address:</td>
+								<td>Arrival:</td>
+								<td>Departure:</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Driver</td>
-								<td>3396 Wilkie Avenue</td>
-								<td>Coquitlam, BC</td>
-								<td>8:00am</td>
-								<td>5:30pm</td>
-							</tr>
+								<td><?php echo $role_1?></td>
+								<td><?php echo $address_1?></td>
+								<td><?php echo $arrival_1?></td>
+								<td><?php echo $departure_1?></td>
+						`	</tr>
 						</tbody>
 					</table>
 					<h3>Additional information</h3>					
-					<p>Please no smokers</p>
+					<p><?php echo $additional_1?></p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -338,25 +339,23 @@
 					<table data-role="table" class="ui-responsive">
 						<thead>
 							<tr>
-								<td>Role</td>
-								<td>Starting</td>
-								<td>&nbsp</td>
-								<td>Arrival</td>
-								<td>Departure</td>
+								<td>Role:</td>
+								<td>Address:</td>
+								<td>Arrival:</td>
+								<td>Departure:</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Driver</td>
-								<td>3396 Wilkie Avenue</td>
-								<td>Coquitlam, BC</td>
-								<td>8:00am</td>
-								<td>5:30pm</td>
-							</tr>
+								<td><?php echo $role_2?></td>
+								<td><?php echo $address_2?></td>
+								<td><?php echo $arrival_2?></td>
+								<td><?php echo $departure_2?></td>
+						`	</tr>
 						</tbody>
 					</table>
 					<h3>Additional information</h3>					
-					<p>Please no smokers</p>
+					<p><?php echo $additional_2?></p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -368,25 +367,23 @@
 					<table data-role="table" class="ui-responsive">
 						<thead>
 							<tr>
-								<td>Role</td>
-								<td>Starting</td>
-								<td>&nbsp</td>
-								<td>Arrival</td>
-								<td>Departure</td>
+								<td>Role:</td>
+								<td>Address:</td>
+								<td>Arrival:</td>
+								<td>Departure:</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Driver</td>
-								<td>3396 Wilkie Avenue</td>
-								<td>Coquitlam, BC</td>
-								<td>8:00am</td>
-								<td>5:30pm</td>
-							</tr>
+								<td><?php echo $role_3?></td>
+								<td><?php echo $address_3?></td>
+								<td><?php echo $arrival_3?></td>
+								<td><?php echo $departure_3?></td>
+						`	</tr>
 						</tbody>
 					</table>
 					<h3>Additional information</h3>					
-					<p>Please no smokers</p>
+					<p><?php echo $additional_3?></p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -398,25 +395,23 @@
 					<table data-role="table" class="ui-responsive">
 						<thead>
 							<tr>
-								<td>Role</td>
-								<td>Starting</td>
-								<td>&nbsp</td>
-								<td>Arrival</td>
-								<td>Departure</td>
+								<td>Role:</td>
+								<td>Address:</td>
+								<td>Arrival:</td>
+								<td>Departure:</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Driver</td>
-								<td>3396 Wilkie Avenue</td>
-								<td>Coquitlam, BC</td>
-								<td>8:00am</td>
-								<td>5:30pm</td>
-							</tr>
+								<td><?php echo $role_4?></td>
+								<td><?php echo $address_4?></td>
+								<td><?php echo $arrival_4?></td>
+								<td><?php echo $departure_4?></td>
+						`	</tr>
 						</tbody>
 					</table>
-					<h3>Additional information</h3>
-					<p>Please no smokers</p>
+					<h3>Additional information</h3>					
+					<p><?php echo $additional_4?></p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
@@ -428,91 +423,89 @@
 					<table data-role="table" class="ui-responsive">
 						<thead>
 							<tr>
-								<td>Role</td>
-								<td>Starting</td>
-								<td>&nbsp</td>
-								<td>Arrival</td>
-								<td>Departure</td>
+								<td>Role:</td>
+								<td>Address:</td>
+								<td>Arrival:</td>
+								<td>Departure:</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Driver</td>
-								<td>3396 Wilkie Avenue</td>
-								<td>Coquitlam, BC</td>
-								<td>8:00am</td>
-								<td>5:30pm</td>
-							</tr>
+								<td><?php echo $role_5?></td>
+								<td><?php echo $address_5?></td>
+								<td><?php echo $arrival_5?></td>
+								<td><?php echo $departure_5?></td>
+						`	</tr>
 						</tbody>
 					</table>
 					<h3>Additional information</h3>					
-					<p>Please no smokers</p>
+					<p><?php echo $additional_5?></p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
 				</div>
 
+				<!--Saturday-->				
+				<div data-role="collapsible">
+					<h2>Saturday</h2>
+					<table data-role="table" class="ui-responsive">
+						<thead>
+							<tr>
+								<td>Role:</td>
+								<td>Address:</td>
+								<td>Arrival:</td>
+								<td>Departure:</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><?php echo $role_6?></td>
+								<td><?php echo $address_6?></td>
+								<td><?php echo $arrival_6?></td>
+								<td><?php echo $departure_6?></td>
+						`	</tr>
+						</tbody>
+					</table>
+					<h3>Additional information</h3>					
+					<p><?php echo $additional_6?></p>
+					 <div data-role="main" class="ui-content">
+						<a href="#" class="ui-btn">Send Request</a>
+					</div>
+				</div>
+				
 				<!--Sunday-->
 				<div data-role="collapsible">
 					<h2>Sunday</h2>
 					<table data-role="table" class="ui-responsive">
 						<thead>
 							<tr>
-								<td>Role</td>
-								<td>Starting</td>
-								<td>&nbsp</td>
-								<td>Arrival</td>
-								<td>Departure</td>
+								<td>Role:</td>
+								<td>Address:</td>
+								<td>Arrival:</td>
+								<td>Departure:</td>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Driver</td>
-								<td>3396 Wilkie Avenue</td>
-								<td>Coquitlam, BC</td>
-								<td>8:00am</td>
-								<td>5:30pm</td>
-							</tr>
+								<td><?php echo $role_7?></td>
+								<td><?php echo $address_7?></td>
+								<td><?php echo $arrival_7?></td>
+								<td><?php echo $departure_7?></td>
+						`	</tr>
 						</tbody>
 					</table>
 					<h3>Additional information</h3>					
-					<p>Please no smokers</p>
+					<p><?php echo $additional_7?></p>
 					 <div data-role="main" class="ui-content">
 						<a href="#" class="ui-btn">Send Request</a>
 					</div>
 				</div>
-				
-				<div class="profile_comments">
-					<!--Comments-->
-					<h1>Comments</h1>
-					<!--Tap to load?-->
-					<!--Load 5 at a time, tap to view more?-->
-					<div class="comment_container">
-						<div class="comment_thumbnail">
-						<img src="images\thumbnails\nickcage.jpg" alt="Profile Picture" width="40">
-						</div>
-						<div class="comment_content">
-						<h3>Jack Smith</h3>
-						<p>May 14, 2019</p>
-						<p>This guy is literally late every single time. I have been 10 minutes late at best and over half an hour at worst</p>
-						</div>
-					</div>
-					
-					<hr>
-					
-					<div class="comment_container">
-						<div class="comment_thumbnail">
-						<img src="images\thumbnails\nickcage.jpg" alt="Profile Picture" width="40">
-						</div>
-						<div class="comment_content">
-						<h3>Jack Smith</h3>
-						<p>May 14, 2019</p>
-						<p>This guy is literally late every single time. I have been 10 minutes late at best and over half an hour at worst</p>
-						</div>
-					</div>	
-				</div>
 			</div>	
 		</div>
+		
+		<!-- Their Profile-->
+		<div data-role="page" id = "profile"></div>
+		
    <div data-role="page" id="showRoutes">
         <div data-role="header">
             <a class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars"
