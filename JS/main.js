@@ -469,11 +469,15 @@ function showDirections() {
 }
 
 //Updates profile page of other users on load
-$(document).on("pagebeforeshow","#profile",function(){ // When entering profile
-	$.post( "profile.php", { memberid: profileID }).done(function( data ) {
-	$('#profile').load('./php/profile.php');																																											./php/profile.php',function(){
-	$('#profile').trigger('create');
-	});
+$(document).on("pagebeforeshow","#myProfile",function(){ // When entering profile
+	$.post("./php/profile.php",
+		{
+			memberid : profileID
+		},
+		function(data){
+			$("#myProfile").html(data);
+			$('#myProfile').trigger('create');
+		});
 });
 
 function genCard() {
