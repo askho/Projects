@@ -467,3 +467,10 @@ function showDirections() {
     $( "#directions-panel" ).show(300);
     $( "#mapcanvas3" ).hide(300);
 }
+
+//Updates profile page of other users on load
+$(document).on("pagebeforeshow","#profile",function(){ // When entering profile
+	$('#profile').load('																																															./php/profile.php',function(){
+		$('#profile').trigger('create');
+	});
+});
