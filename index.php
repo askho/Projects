@@ -41,8 +41,18 @@
 			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
     </div>
     
+	<!-- TEST PAGE FOR CARDS -->
+	
+	<h1>You have new notifications!</h1>
+        
+		<div id = "card_gen">
+			<script> genCard();
+			</script>
+        </div>
+	
+	<!-- END OF TEST PAGE FOR CARDS -->
+	
 	<div data-role="main" class="ui-content ui-group-theme-a">
-			<p>You have [3] new notifications.</p>
 			<a href = "#showRoutes">Show routes</a>
 		<div class="card_container">
 			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>

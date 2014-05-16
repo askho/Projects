@@ -475,3 +475,35 @@ $(document).on("pagebeforeshow","#profile",function(){ // When entering profile
 	$('#profile').trigger('create');
 	});
 });
+
+function genCard() {
+    $.ajax({ 
+		type: 'GET', 
+		url: 'php/testmysql.php', 
+		data: { }, 
+		dataType: 'json',
+		success: function (data) {
+			//alert(data[0].first);
+			//alert(data[1].first);
+			var i = 0;
+			$('#card_gen').html("");
+			while(i < data.length) {
+				var name = data[i].first;
+				var day = data[i].day;
+				$('#card_gen').append("<div data-role=\"main\" class=\"ui-content ui-group-theme-a\">" +
+					"<div class = \"card_container\">" +
+					"<div class=\"thumbnail\"><img src = \"images/thumbnails/nickcage.jpg\" alt = \"oneTrueGod\" width = \"72px\"> </div>" +
+					"<div class=\"card_content\">" + "<p>" +
+					name +
+					" wants to give you a ride on " +
+					day +
+					"!" + "</p>" +
+					"</div>" +
+					"<a href=\"#myPopup2\" data-rel=\"button\" class=\"ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete\"></a>" +
+					"</div>" + 
+					"</div>");
+				i++
+			}
+		}
+	});
+ }
