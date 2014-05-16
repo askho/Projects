@@ -86,7 +86,7 @@ function RunSignOUT() {
 }
 
 function SignUpDone() {
-	window.location.href = "../start.php";
+	window.location.href = "start.php";
 }
 	
 //Test name to see if it only contains characters and is filled out

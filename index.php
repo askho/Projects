@@ -42,7 +42,7 @@
     </div>
     
 	<div data-role="main" class="ui-content ui-group-theme-a">
-			<p>You have [3] new notifications <?php echo $_COOKIE['user']?>.</p>
+			<p>You have [3] new notifications.</p>
 			<a href = "#showRoutes">Show routes</a>
 		<div class="card_container">
 			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>
