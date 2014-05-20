@@ -288,6 +288,13 @@
 			
 			<div data-role="main" class="ui-content">
 			<div id = "profileContent"></div>
+			<div id = "profileContentMonday"></div>
+			<div id = "profileContentTuesday"></div>
+			<div id = "profileContentWednesday"></div>
+			<div id = "profileContentThursday"></div>
+			<div id = "profileContentFriday"></div>
+			<div id = "profileContentSaturday"></div>
+			<div id = "profileContentSunday"></div>
 			</div>
 		</div>
 
