@@ -4,14 +4,19 @@
     if(mysqli_connect_errno()) {
         echo "Failed to connect to MySQL:" . mysqli_connect_error();
     }
-//   $run = mysqli_query($con,"INSERT INTO " . $_GET['day'] . " (address)
- //  	VALUES ('homely')");
+$memberid = $_GET['uid'];
 $currentdays = $_GET['curday'];
 $currinfo = $_GET['dayinf'];
 $address = $_GET['caddress'];
-//echo $regSubCodeArray;
+$location = $_GET['newlocation'];
+$depart = $_GET['departinf'];
+$role = $_GET['role'];
+//$memid = mysqli_query($con,"SELECT memberid FROM $currentdays");
+	
+	//if ($memberid = $memid) {
 
-   $run1 = mysqli_query($con,"INSERT INTO " . $currentdays . " (arrivaltime, address)
-   	VALUES ('$currinfo', '$address')");
-#}
+	//} else {
+   $run1 = mysqli_query($con,"INSERT INTO " . $currentdays . " (arrivaltime, address, location, departtime, role)
+   	VALUES ('$currinfo', '$address', '$location', '$depart', '$role')");
+//}
     ?>
