@@ -1010,7 +1010,16 @@ function sendRequest(day, direction) {
             address:ajaxData2.address    
         }, 
         success: function (data) {
-            alert(data);
+            if(data == "success") {
+                $("#success" ).popup( "open");
+                setTimeout(function (){
+                    $("#success").popup("close");   
+                }, 2000);
+            } else {
+                $("#failed").popup("open"); 
+                setTimeout(function (){
+                    $("#failed").popup("close");   
+                }, 2000);           }
         }
     });
 }
