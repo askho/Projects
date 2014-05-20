@@ -279,7 +279,7 @@
 		  </div>
 		</div> 
 		
-		<!-- My Profile-->
+		<!-- profiles-->
 		<div data-role="page" id = "Profile">
 			<div data-role="header">
 				<h1><img src = "JS\jqueryMobile\images\icons-png\user-white.png" height =14em alt = "Profile Icon">Profile</h1>
@@ -297,9 +297,26 @@
 			<div id = "profileContentSunday"></div>
 			</div>
 		</div>
+		<div data-role="page" id = "myProfile">
+			<div data-role="header">
+				<h1><img src = "JS\jqueryMobile\images\icons-png\user-white.png" height =14em alt = "Profile Icon">My Profile</h1>
+				<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
+			</div>
+			
+			<div data-role="main" class="ui-content">
+			<div id = "myprofileContent"></div>
+			<div id = "myprofileContentMonday"></div>
+			<div id = "myprofileContentTuesday"></div>
+			<div id = "myprofileContentWednesday"></div>
+			<div id = "myprofileContentThursday"></div>
+			<div id = "myprofileContentFriday"></div>
+			<div id = "myprofileContentSaturday"></div>
+			<div id = "myprofileContentSunday"></div>
+			</div>
+		</div>
+
 
 		
-		<!-- Their Profile-->
 		
    <div data-role="page" id="showRoutes">
         <div data-role="header">
