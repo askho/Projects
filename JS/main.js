@@ -178,7 +178,7 @@ function generateMenuPanel() {
     var panel = '<div data-role="panel" class = "menuPanel" id="mypanel" data-position="left" data-display="overlay">\
         <div class ="menutitle"><h1>Menu</h1>\</div>\
         <a href = \"#home\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\home-white.png" width =12em alt = "Home Icon"> Home</a>\
-        <a href = \"#Profile\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\" onclick = \"profileID=userid\"><img src = "JS\\jqueryMobile\\images\\icons-png\\user-white.png" width =12em alt = "Profile Icon">My Profile</a>\
+        <a href = \"#myProfile\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\" onclick = \"profileID=userid\"><img src = "JS\\jqueryMobile\\images\\icons-png\\user-white.png" width =12em alt = "Profile Icon">My Profile</a>\
         <a href = \"#myRideSchedule\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\calendar-white.png" width =12em alt = "Schedule Icon"> My Schedule</a>\
         <a href = \"#findMatches\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\search-white.png" width =12em alt = "Find Icon"> Find Matches</a>\
 		<a href = \"#editProfile\" data-transition=\"slide\" data-rel=\"close\" class = \"menuLink\"><img src = "JS\\jqueryMobile\\images\\icons-png\\edit-white.png" width =12em alt = "Edit Icon"> Edit Profile</a>\
@@ -529,7 +529,14 @@ $(document).on("pagebeforeshow","#Profile",function(){ // When entering profile
                                 "</tbody>"+
                             "</table>"+
                             "<h3>Additional information</h3>"+            
-                            "<p><?php echo $additional_1?></p><div id = \"mondayRequest\"></div></div>");
+                            "<p><?php echo $additional_1?></p>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                            "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('monday', 'arrival')\">Send Request for arrival</a>"+
+                            "</div>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                            "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('monday', 'departure')\">Send Request for departure</a>"+
+                            "</div>"+
+                            "</div>");
 
 
                 }
@@ -557,7 +564,14 @@ $(document).on("pagebeforeshow","#Profile",function(){ // When entering profile
                                 "</tbody>"+
                             "</table>"+
                             "<h3>Additional information</h3>"+             
-                            "<p><?php echo $additional_2?></p><div id = \"tuesdayRequest\"></div></div>");
+                            "<p><?php echo $additional_2?></p>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('tuesday', 'arrival')\">Send Request for arrival</a>"+
+                            "</div>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('tuesday', 'departure')\">Send Request for departure</a>"+
+                            "</div>"+
+                            "</div>");
                 }
                 if(typeof data.wednesday != 'undefined') {
                     data.wednesday.role = convertRole(data.wednesday.role);
@@ -583,7 +597,14 @@ $(document).on("pagebeforeshow","#Profile",function(){ // When entering profile
                                 "</tbody>"+
                             "</table>"+
                             "<h3>Additional information</h3>" +          
-                            "<p><?php echo $additional_3?></p><div id = \"wednesdayRequest\"></div></div>");
+                            "<p><?php echo $additional_3?></p>" +
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('wednesday', 'arrival')\">Send Request for arrival</a>"+
+                            "</div>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('wednesday', 'departure')\">Send Request for departure</a>"+
+                            "</div>" +
+                            "</div>");
                 }
                 if(typeof data.thursday != 'undefined') {
                     data.thursday.role = convertRole(data.thursday.role);
@@ -609,7 +630,14 @@ $(document).on("pagebeforeshow","#Profile",function(){ // When entering profile
                                 "</tbody>"+
                             "</table>"+
                             "<h3>Additional information</h3>" +             
-                            "<p><?php echo $additional_4?></p><div id = \"thursdayRequest\"></div></div>");
+                            "<p><?php echo $additional_4?></p>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('thursday', 'arrival')\">Send Request for arrival</a>"+
+                            "</div>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('thursday', 'departure')\">Send Request for departure</a>"+
+                            "</div>"+
+                            "</div>");
                 }
                 if(typeof data.friday != "undefined") {
                     data.friday.role = convertRole(data.friday.role);
@@ -635,7 +663,14 @@ $(document).on("pagebeforeshow","#Profile",function(){ // When entering profile
                                 "</tbody>"+
                             "</table>"+
                             "<h3>Additional information</h3>" +           
-                            "<p><?php echo $additional_5?><div id = \"fridayRequest\"></div></div>");
+                            "<p><?php echo $additional_5?>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('friday', 'arrival')\">Send Request for arrival</a>"+
+                            "</div>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('friday', 'departure')\">Send Request for departure</a>"+
+                            "</div>"+
+                            "</div>");
                 }
                 if(typeof data.saturday != "undefined") {
                     data.saturday.role = convertRole(data.saturday.role);
@@ -661,7 +696,14 @@ $(document).on("pagebeforeshow","#Profile",function(){ // When entering profile
                                 "</tbody>"+
                             "</table>"+
                             "<h3>Additional information</h3>"+                 
-                            "<p><?php echo $additional_6?></p><div id = \"saturdayRequest\"></div></div>");
+                            "<p><?php echo $additional_6?></p>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('saturday', 'arrival')\">Send Request for arrival</a>"+
+                            "</div>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('saturday', 'departure')\">Send Request for departure</a>"+
+                            "</div>"+
+                            "</div>");
                 }
                 if(typeof data.sunday != "undefined") {
                     data.sunday.role = convertRole(data.sunday.role);
@@ -687,67 +729,239 @@ $(document).on("pagebeforeshow","#Profile",function(){ // When entering profile
                                 "</tbody>"+
                             "</table>"+
                             "<h3>Additional information</h3>" +      
-                            "<p><?php echo $additional_7?><div id = \"sundayRequest\"></div></div>");
-                }
-                if(profileID != userid) {
-                    $("#mondayRequest").append(                    
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('monday', 'arrival')\">Send Request for arrival</a>"+
-                    "</div>"+
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('monday', 'departure')\">Send Request for departure</a>"+
-                    "</div>");
-                
-                $("#tuesdayRequest").append(                    
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('tuesday', 'arrival')\">Send Request for arrival</a>"+
-                    "</div>"+
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('tuesday', 'departure')\">Send Request for departure</a>"+
-                    "</div>");
-                
-                $("#wednesdayRequest").append(                    
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('wednesday', 'arrival')\">Send Request for arrival</a>"+
-                    "</div>"+
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('wednesday', 'departure')\">Send Request for departure</a>"+
-                    "</div>");
-            
-                $("#thursdayRequest").append(                    
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('thursday', 'arrival')\">Send Request for arrival</a>"+
-                    "</div>"+
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('thursday', 'departure')\">Send Request for departure</a>"+
-                    "</div>");
-                
-                $("#fridayRequest").append(                    
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('friday', 'arrival')\">Send Request for arrival</a>"+
-                    "</div>"+
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('friday', 'departure')\">Send Request for departure</a>"+
-                    "</div>");
-                
-                $("#saturdayRequest").append(                    
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('saturday', 'arrival')\">Send Request for arrival</a>"+
-                    "</div>"+
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('saturday', 'departure')\">Send Request for departure</a>"+
-                    "</div>");
-                
-                $("#sundayRequest").append(                    
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('sundayRequest', 'arrival')\">Send Request for arrival</a>"+
-                    "</div>"+
-                    "<div data-role=\"main\" class=\"ui-content\">"+
-                        "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('sundayRequest', 'departure')\">Send Request for departure</a>"+
-                    "</div>");
+                            "<p><?php echo $additional_7?>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('sunday', 'arrival')\">Send Request for arrival</a>"+
+                            "</div>"+
+                            "<div data-role=\"main\" class=\"ui-content\">"+
+                                "<a href=\"#\" class=\"ui-btn\" onclick = \"sendRequest('sunday', 'departure')\">Send Request for departure</a>"+
+                            "</div>"+
+                            "</div>");
                 }
 
             $('#Profile').trigger('create');
+        }
+    });
+});
+$(document).on("pageinit","#myProfile",function(){ // When entering profile
+        $.ajax({
+        type: 'GET',
+        url: 'php/generateProfile.php',
+        data: {
+            get_param: 'value',
+            id: userid,
+        },
+        dataType: 'json',
+        success: function (data) {
+            ajaxData = data;
+            $("#myprofileContent").html(
+                "<div class=\"profile_main\">" +
+                    "<h1>"+ data.profile.first + " " + data.profile.last +"</h1>"+
+                    "<div class=\"profile_img\">" +
+                        "<img id=\"photo\" src=\"images\\thumbnails\\nickcage.jpg\" alt=\"Profile Picture\">" +
+                        "<div id=\"user_rating\" class=\"star\"></div>" +                       
+                    "</div>" +
+                    "<div class=\"profile_contact\">" +
+                        "<h2>Contact Info<hr></h2>" +
+                        "<h3>Email:</h3>" +
+                        "<p>" + data.profile.email + "</p>" +
+                        "<h3>Phone:</h3>" +
+                        "<p>" + data.profile.phone + "</p>" +
+                    "</div>" +
+                    "<div class=\"profile_info\">"+
+                        "<br/>"+
+                        "<h3>About me</h3>"+
+                        "<hr>"+
+                        "<p>"+data.profile.info+"</p>"+
+                    "</div>"+
+                    "<br style=\"clear:both;\">"+
+                "</div>");
+                if(typeof data.monday != 'undefined') {
+                    data.monday.role = convertRole(data.monday.role);
+                    $("#myprofileContentMonday").append(
+                        "<div data-role=\"collapsible\">"+
+                            "<h2>Monday</h2>"+
+                            "<table data-role=\"table\" class=\"ui-responsive\">"+
+                                "<thead>"+
+                                    "<tr>"+
+                                        "<td>Role:</td>"+
+                                        "<td>Address:</td>"+
+                                        "<td>Arrival:</td>"+
+                                        "<td>Departure:</td>"+
+                                    "</tr>"+
+                                "</thead>"+
+                                "<tbody>"+
+                                    "<tr>"+
+                                        "<td>"+data.monday.role+"</td>"+
+                                        "<td>"+data.monday.address+"</td>"+
+                                        "<td>"+data.monday.arrivaltime+"</td>"+
+                                        "<td>"+data.monday.departtime+"</td>"+
+                                   "</tr>"+
+                                "</tbody>"+
+                            "</table>"+
+                            "<h3>Additional information</h3>"+            
+                            "<p><?php echo $additional_1?></p><div id = \"mondayRequest\"></div></div>");
+
+
+                }
+                if(typeof data.tuesday != 'undefined') {
+                    data.tuesday.role = convertRole(data.tuesday.role);
+                    $("#myprofileContentTuesday").append(
+                        "<div data-role=\"collapsible\">"+
+                            "<h2>Tuesday</h2>"+
+                            "<table data-role=\"table\" class=\"ui-responsive\">"+
+                                "<thead>"+
+                                    "<tr>"+
+                                        "<td>Role:</td>"+
+                                        "<td>Address:</td>"+
+                                        "<td>Arrival:</td>"+
+                                        "<td>Departure:</td>"+
+                                    "</tr>"+
+                                "</thead>"+
+                                "<tbody>"+
+                                    "<tr>"+
+                                        "<td>"+data.tuesday.role+"</td>"+
+                                        "<td>"+data.tuesday.address+"</td>"+
+                                        "<td>"+data.tuesday.arrivaltime+"</td>"+
+                                        "<td>"+data.tuesday.departtime+"</td>"+
+                                   "</tr>"+
+                                "</tbody>"+
+                            "</table>"+
+                            "<h3>Additional information</h3>"+             
+                            "<p><?php echo $additional_2?></p><div id = \"tuesdayRequest\"></div></div>");
+                }
+                if(typeof data.wednesday != 'undefined') {
+                    data.wednesday.role = convertRole(data.wednesday.role);
+                    $("#myprofileContentWednesday").append(
+                        "<div data-role=\"collapsible\">"+         
+                            "<h2>Wednesday</h2>"+
+                            "<table data-role=\"table\" class=\"ui-responsive\">"+
+                                "<thead>"+
+                                    "<tr>"+
+                                        "<td>Role:</td>"+
+                                        "<td>Address:</td>"+
+                                        "<td>Arrival:</td>"+
+                                        "<td>Departure:</td>"+
+                                    "</tr>"+
+                                "</thead>"+
+                                "<tbody>"+
+                                    "<tr>"+
+                                        "<td>"+data.wednesday.role+"</td>"+
+                                        "<td>"+data.wednesday.address+"</td>"+
+                                        "<td>"+data.wednesday.arrivaltime+"</td>"+
+                                        "<td>"+data.wednesday.departtime+"</td>"+
+                                   "</tr>"+
+                                "</tbody>"+
+                            "</table>"+
+                            "<h3>Additional information</h3>" +          
+                            "<p><?php echo $additional_3?></p><div id = \"wednesdayRequest\"></div></div>");
+                }
+                if(typeof data.thursday != 'undefined') {
+                    data.thursday.role = convertRole(data.thursday.role);
+                    $("#myprofileContentThursday").append(
+                        "<div data-role=\"collapsible\">"+
+                            "<h2>Thursday</h2>"+
+                            "<table data-role=\"table\" class=\"ui-responsive\">"+
+                                "<thead>"+
+                                    "<tr>"+
+                                        "<td>Role:</td>"+
+                                        "<td>Address:</td>"+
+                                        "<td>Arrival:</td>"+
+                                        "<td>Departure:</td>"+
+                                    "</tr>"+
+                                "</thead>"+
+                                "<tbody>"+
+                                    "<tr>"+
+                                        "<td>"+data.thursday.role+"</td>"+
+                                        "<td>"+data.thursday.address+"</td>"+
+                                        "<td>"+data.thursday.arrivaltime+"</td>"+
+                                        "<td>"+data.thursday.departtime+"</td>"+
+                                   "</tr>"+
+                                "</tbody>"+
+                            "</table>"+
+                            "<h3>Additional information</h3>" +             
+                            "<p><?php echo $additional_4?></p><div id = \"thursdayRequest\"></div></div>");
+                }
+                if(typeof data.friday != "undefined") {
+                    data.friday.role = convertRole(data.friday.role);
+                    $("#myprofileContentFriday").append(                
+                        "<div data-role=\"collapsible\">"+
+                            "<h2>Friday</h2>"+
+                            "<table data-role=\"table\" class=\"ui-responsive\">"+
+                                "<thead>"+
+                                    "<tr>"+
+                                        "<td>Role:</td>"+
+                                        "<td>Address:</td>"+
+                                        "<td>Arrival:</td>"+
+                                        "<td>Departure:</td>"+
+                                    "</tr>"+
+                                "</thead>"+
+                                "<tbody>"+
+                                    "<tr>"+
+                                        "<td>"+data.friday.role+"</td>"+
+                                        "<td>"+data.friday.address+"</td>"+
+                                        "<td>"+data.friday.arrivaltime+"</td>"+
+                                        "<td>"+data.friday.departtime+"</td>"+
+                                   "</tr>"+
+                                "</tbody>"+
+                            "</table>"+
+                            "<h3>Additional information</h3>" +           
+                            "<p><?php echo $additional_5?><div id = \"fridayRequest\"></div></div>");
+                }
+                if(typeof data.saturday != "undefined") {
+                    data.saturday.role = convertRole(data.saturday.role);
+                    $("#myprofileContentSaturday").append(                
+                        "<div data-role=\"collapsible\">"+
+                            "<h2>Saturday</h2>"+
+                            "<table data-role=\"table\" class=\"ui-responsive\">"+
+                                "<thead>"+
+                                    "<tr>"+
+                                        "<td>Role:</td>"+
+                                        "<td>Address:</td>"+
+                                        "<td>Arrival:</td>"+
+                                        "<td>Departure:</td>"+
+                                    "</tr>"+
+                                "</thead>"+
+                                "<tbody>"+
+                                    "<tr>"+
+                                        "<td>"+data.saturday.role+"</td>"+
+                                        "<td>"+data.saturday.address+"</td>"+
+                                        "<td>"+data.saturday.arrivaltime+"</td>"+
+                                        "<td>"+data.saturday.departtime+"</td>"+
+                                   "</tr>"+
+                                "</tbody>"+
+                            "</table>"+
+                            "<h3>Additional information</h3>"+                 
+                            "<p><?php echo $additional_6?></p><div id = \"saturdayRequest\"></div></div>");
+                }
+                if(typeof data.sunday != "undefined") {
+                    data.sunday.role = convertRole(data.sunday.role);
+                    $("#myprofileContentSunday").append(
+                        "<div data-role=\"collapsible\">"+
+                            "<h2>Sunday</h2>"+
+                            "<table data-role=\"table\" class=\"ui-responsive\">"+
+                                "<thead>"+
+                                    "<tr>"+
+                                        "<td>Role:</td>"+
+                                        "<td>Address:</td>"+
+                                        "<td>Arrival:</td>"+
+                                        "<td>Departure:</td>"+
+                                    "</tr>"+
+                                "</thead>"+
+                                "<tbody>"+
+                                    "<tr>"+
+                                        "<td>"+data.sunday.role+"</td>"+
+                                        "<td>"+data.sunday.address+"</td>"+
+                                        "<td>"+data.sunday.arrivaltime+"</td>"+
+                                        "<td>"+data.sunday.departtime+"</td>"+
+                                   "</tr>"+
+                                "</tbody>"+
+                            "</table>"+
+                            "<h3>Additional information</h3>" +      
+                            "<p><?php echo $additional_7?><div id = \"sundayRequest\"></div></div>");
+                }
+
+            $('#myProfile').trigger('create');
         }
     });
 });
@@ -781,6 +995,7 @@ function sendRequest(day, direction) {
             address:ajaxData2.address    
         }, 
         success: function (data) {
+            alert(data);
         }
     });
 }
