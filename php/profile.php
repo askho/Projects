@@ -29,7 +29,7 @@ $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 $address_1 = $row['address'];
-if ($row['first'] == 0){
+if ($row['role'] == 0){
 	$role_1 = "Driver";
 } else {
 	$role_1 = "Passenger";
@@ -45,7 +45,7 @@ $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 $address_2 = $row['address'];
-if ($row['first'] == 0){
+if ($row['role'] == 0){
 	$role_2= "Driver";
 } else {
 	$role_2 = "Passenger";
@@ -61,7 +61,7 @@ $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 $address_3 = $row['address'];
-if ($row['first'] == 0){
+if ($row['role'] == 0){
 	$role_3 = "Driver";
 } else {
 	$role_3 = "Passenger";
@@ -77,7 +77,7 @@ $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 $address_4 = $row['address'];
-if ($row['first'] == 0){
+if ($row['role'] == 0){
 	$role_4 = "Driver";
 } else {
 	$role_4 = "Passenger";
@@ -93,7 +93,7 @@ $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 $address_5 = $row['address'];
-if ($row['first'] == 0){
+if ($row['role'] == 0){
 	$role_5 = "Driver";
 } else {
 	$role_5 = "Passenger";
@@ -109,7 +109,7 @@ $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 $address_6 = $row['address'];
-if ($row['first'] == 0){
+if ($row['role'] == 0){
 	$role_6 = "Driver";
 } else {
 	$role_6 = "Passenger";
@@ -127,7 +127,7 @@ $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
 $address_7 = $row['address'];
-if ($row['first'] == 0){
+if ($row['role'] == 0){
 	$role_7 = "Driver";
 } else {
 	$role_7 = "Passenger";

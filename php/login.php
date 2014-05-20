@@ -15,7 +15,8 @@
         while($row = mysqli_fetch_array($result))
               {
                 if(strcasecmp($row['username'], $user) == 0 && $row['password'] == $Encryptpass) {
-                    setcookie("user", $user, time()+3600*24);
+                    setcookie("user", $user, time()+3600*24,"/");
+                    setcookie("memberID", $row['memberid'], time()+3600*24,"/");
 					header( 'Location: ../index.php' ) ;
 					exit();
 				} else {

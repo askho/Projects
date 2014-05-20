@@ -5,9 +5,9 @@
         echo "Failed to connect to MySQL:" . mysqli_connect_error();
     }
 
-$request = "SELECT first,day FROM requests INNER JOIN profile ON requests.requesterid = profile.memberid";
+$request = "SELECT first, day FROM requests INNER JOIN profile ON requests.requesterid = profile.memberid WHERE requests.requesteeid = 5";
 //echo $request;
-$result = mysqli_query("SELECT first,day FROM requests INNER JOIN profile ON requests.requesterid = profile.memberid", $con);
+$result = mysqli_query($con, $request);
 while ($row = mysqli_fetch_object($result)) {
 	$obj[] = $row;
 	}

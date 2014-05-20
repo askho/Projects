@@ -2,5 +2,5 @@
     $host = "localhost";
     $user = "root";
     $password = "password1";
-    $database = "bcitdb";
+    $database = "group1_BCIT";
 ?>
