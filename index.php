@@ -29,8 +29,6 @@
 		<!--Raty config-->
 		<script type="text/javascript" src="JS/profile_rating.js"></script>
 		
-		<!--Schedule.js for generating days-->
-		<script type="text/javascript" src="JS/schedule.js"></script>
 	</head>
 	
 	<body onload = "initalize()">
@@ -295,8 +293,16 @@
 			<div id = "profileContentFriday"></div>
 			<div id = "profileContentSaturday"></div>
 			<div id = "profileContentSunday"></div>
+			<div data-role="popup" id="success">
+				<p>Request sent!<p>
+			</div>
+			<div data-role="popup" id="failed">
+				<p>Request failed, request already sent.<p>
+			</div>
 			</div>
 		</div>
+		
+
 		<div data-role="page" id = "myProfile">
 			<div data-role="header">
 				<h1><img src = "JS\jqueryMobile\images\icons-png\user-white.png" height =14em alt = "Profile Icon">My Profile</h1>
