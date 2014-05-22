@@ -19,8 +19,8 @@
 		</div>
 	  
 		<div data-role="main" class="ui-content-landing">
-			<a href="#signin" class="ui-btn" data-transition="slide">Sign In</a>
-			<a href="#signup" class="ui-btn" data-transition="slide">Register</a>
+			<a href="#signin" id="signinbutton" class="ui-btn" data-transition="slide">Sign In</a>
+			<a href="#signup" id="signupbutton" class="ui-btn" data-transition="slide">Register</a>
 		</div>
 	</div>
 	<!--Sign in Page-->

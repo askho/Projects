@@ -31,6 +31,10 @@ All of your functions go here. If something needs to be run on initialization, a
 **/
 function initalize() {
     generateMenuPanel();
+<<<<<<< HEAD
+=======
+    //setCookie("memberid",5,1);
+>>>>>>> master
 }
 
 		/** Sign up page JavaScript**/
@@ -96,10 +100,14 @@ function formValidate() {
 }
 
 function RunSignOUT() {
+<<<<<<< HEAD
 	document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
     document.cookie = "memberID=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
     delete window.userid; 
     window.location.href = "start.php";
+=======
+	location.href = 'php/Signout.php';
+>>>>>>> master
 }
 
 function SignUpDone() {
@@ -1012,7 +1020,11 @@ function sendRequest(day, direction) {
             address:ajaxData2.address    
         }, 
         success: function (data) {
+<<<<<<< HEAD
             if(data == "success") {
+=======
+                            if(data == "success") {
+>>>>>>> master
                 $("#success" ).popup( "open");
                 setTimeout(function (){
                     $("#success").popup("close");   
@@ -1041,6 +1053,7 @@ function revertRole(role) {
         return 1;
     }
 }
+<<<<<<< HEAD
 function validateEditProfile() {
     var password = document.getElementById('pass').value;
     var Confirmpassword = document.getElementById('confirmPass').value;
@@ -1095,6 +1108,39 @@ function genCard() {
 			}
 		}
 	});
+=======
+function genCard() {
+    $.ajax({ 
+        type: 'GET', 
+        url: 'php/generateCards.php', 
+        data: { userId:userid },
+        dataType: 'json',
+        success: function (data) {
+            var i = 0;
+            $('#card_gen').html("");
+            while(i < data.length) {
+                var name = data[i].first;
+                var day = data[i].day;
+                $('#card_gen').append("<div data-role=\"main\" class=\"ui-content ui-group-theme-a\">" +
+                    "<div class = \"card_container\">" +
+                    "<div class=\"thumbnail\"><img src = \"images/thumbnails/nickcage.jpg\" alt = \"oneTrueGod\" width = \"72px\"> </div>" +
+                    "<div class=\"card_content\">" + "<p>" +
+                    name +
+                    " wants to give you a ride on " +
+                    day +
+                    "!" + "</p>" +
+                    "</div>" +
+                    "<a href=\"#myPopup2\" data-rel=\"button\" class=\"ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete\"></a>" +
+                    "<script>" + " $('.ui-btn-b').click(function() { " +
+                    "$(this).closest('.card_container').remove();" + "});" +
+                    "</script>" +
+                    "</div>" + 
+                    "</div>");
+                i++
+            }
+        }
+    });
+>>>>>>> master
  }
 
 /*START OF LOGANS STUFF*/
@@ -1218,6 +1264,17 @@ function orderInfo() {
 
 
 function loadInfo() {
+<<<<<<< HEAD
+=======
+            if (role[currentday-1] == 1) {
+            $("#passenger1").prop('checked', true).checkboxradio("refresh");
+            $("#driver1").checkboxradio("refresh");
+        }
+        else {
+            $("#driver1").prop('checked', true).checkboxradio("refresh");
+            $("#passenger1").checkboxradio("refresh");
+        }
+>>>>>>> master
   for (var i = 0; i < info.length; i++) {
       if (document.getElementById("day").innerHTML.substring(0,2) == info[i].substring(info[i].length-2, info[i].length)) {
         if (parseInt(info[i].substring(0,info[i].length - 5)) > 12 ) {
@@ -1247,6 +1304,10 @@ function loadInfo() {
          $('#depam').selectmenu('refresh', true);
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 /*      for (var i = 0; i < holdmarker.length; i++) {
         
         holdmarker[i].setMap(null); }
@@ -1260,9 +1321,17 @@ function sortInfo() {
 var count = 0;
   for(var i = 0; i < info.length; i++) {
     for (var a = info.length - 1; a > i; a--) {
+<<<<<<< HEAD
       if ((info[i].substring(info[i].length-2, info[i].length) == info[a].substring(info[a].length-2, info[a].length)) && a != i ){
         info.splice(i,1);
       }
+=======
+        if (info[i] != null) {
+      if ((info[i].substring(info[i].length-2, info[i].length) == info[a].substring(info[a].length-2, info[a].length)) && a != i ){
+        info.splice(i,1);
+      }
+  }
+>>>>>>> master
     }
   }
   for(var i = 0; i < depinfo.length; i++) {
@@ -1279,6 +1348,7 @@ function dayChange(num) {
   document.getElementById("day").innerHTML = days[num].charAt(0).toUpperCase() + days[num].substring(1,days[num].length);
   currentday++;
   if (currentday != days.length) {
+<<<<<<< HEAD
     $("#next").attr("onclick", "submitFiles();dayChange(" + currentday + ");loadInfo();");
     $("#next").val("Next");
     $("#next").button("refresh");}
@@ -1286,6 +1356,13 @@ function dayChange(num) {
     $("#next").attr("onclick", "submitFiles();finalSubmit()");
     $("#next").val("Submit");
     $("#next").button("refresh");
+=======
+    $("#next").attr("onclick", "codeAddress();submitFiles();dayChange(" + currentday + ");loadInfo();");
+    $("#next").val("Next").button("refresh");
+} else {
+    $("#next").attr("onclick", "submitFiles();finalSubmit()");
+    $("#next").val("Submit").button("refresh");
+>>>>>>> master
   }
 }
 
@@ -1301,7 +1378,11 @@ var carinfo;
 orderInfo();
 for (var i = 0; i < nInfo.length; i += 2) {
   if ( nInfo[i] != null ) {
+<<<<<<< HEAD
     if (dInfo[i] != null) {
+=======
+    if (dInfo[i] != null       ) {
+>>>>>>> master
       depart = dInfo[i];
     }
     daystr = nInfo[i];
@@ -1313,8 +1394,22 @@ for (var i = 0; i < nInfo.length; i += 2) {
 $.ajax({
   type: 'GET',
   url: 'php/schedule.php',
+<<<<<<< HEAD
   data: {curday: today, dayinf: daystr, caddress: setaddress, newlocation: loca, departinf: depart, role: carinfo},
   success: function(data) {
+=======
+  data: {
+    curday: today,
+    dayinf: daystr,
+    caddress: setaddress,
+    newlocation: loca,
+    departinf: depart,
+    role: carinfo,
+    uid: userid
+    },
+  success: function(data) {
+location.href = "#findMatches";
+>>>>>>> master
   }
 
   });
@@ -1372,6 +1467,18 @@ function radioCheck() {
 if (bad == 0 && days.length != 0 && ran == 0) {
     document.getElementById("day").innerHTML = days[0].charAt(0).toUpperCase() + days[0].substring(1,days[0].length);
     buttonGen();
+<<<<<<< HEAD
+=======
+    for (var i = 0; i < days.length; i++) {
+        if($("#passenger1").is(':checked') == true) {
+            role.push(1);
+
+        }
+        else {
+            role.push(0);
+        }
+    }
+>>>>>>> master
     ran++;
   } else {
     return false;
@@ -1380,6 +1487,10 @@ if (bad == 0 && days.length != 0 && ran == 0) {
 if (days.length == 1) { 
     $("#next").attr("onclick", "submitFiles();finalSubmit()");
     $("#next").val("Submit");
+<<<<<<< HEAD
+=======
+    $("#next").button("refresh");
+>>>>>>> master
 }
 }
 
@@ -1473,8 +1584,12 @@ map2count++;
         alert("Invalid location");
       }
     });
+<<<<<<< HEAD
   }
 
 
 
 
+=======
+  }
+>>>>>>> master

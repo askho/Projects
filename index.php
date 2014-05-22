@@ -34,29 +34,80 @@
 		<!--Raty config-->
 		<script type="text/javascript" src="JS/profile_rating.js"></script>
 		
+<<<<<<< HEAD
 
 	</head>
 	
 	<body onload = "initalize()">
+=======
+	</head>
+	
+	<body onload = "initalize()">
+
+>>>>>>> master
 	<div data-role="page" id = "home">
     <div data-role="header" class="ui-title">
 		<h1><img src = "JS\jqueryMobile\images\icons-png\home-white.png" height =14em alt = "Home Icon"> Home</h1>
 			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
     </div>
     
+<<<<<<< HEAD
 	<!-- TEST PAGE FOR CARDS -->
 	
 	<h1>You have new notifications!</h1>
+=======
+	<!-- CARD GEN DIV -->
+	
+	<h1>Your Notifications</h1>
+>>>>>>> master
         
 		<div id = "card_gen">
 			<script> genCard();
 			</script>
         </div>
 	
+<<<<<<< HEAD
 	<!-- END OF TEST PAGE FOR CARDS -->
 	
 	<div data-role="main" class="ui-content ui-group-theme-a">
 			<a href = "#showRoutes">Show routes</a>
+=======
+	<!-- START OF NICK CAGE TEST CARDS
+	
+	<div data-role="main" class="ui-content ui-group-theme-a">
+			<a href = "#showRoutes">Show routes</a>
+		<div class="card_container">
+			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>
+			
+			<div class="card_content">
+				<p>Sir Cage wants to give you a ride on Monday!Sir Cage wants to give you a ride on Monday!</p>
+			</div>
+				
+				<a href="#myPopup2" data-rel="button" class="ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete"></a>
+		</div>
+		
+		<div class="card_container">
+			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>
+			
+			<div class="card_content">
+				<p>Sir Cage wants to give you a ride on Monday!Sir Cage wants to give you a ride on Monday!</p>
+			</div>
+				
+				<a href="#myPopup2" data-rel="button" class="ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete"></a>
+		</div>
+		
+		<div class="card_container">
+			<div class="thumbnail"> <img src = "images/thumbnails/nickcage.jpg" width = 72px alt = "oneTrueGod"> </div>
+			
+			<div class="card_content">
+				<p>Sir Cage wants to give you a ride on Monday!Sir Cage wants to give you a ride on Monday!</p>
+			</div>
+				
+				<a href="#myPopup2" data-rel="button" class="ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete"></a>
+		</div>
+		
+		 END OF NICK CAGE TEST CARDS -->
+>>>>>>> master
 				
 	</div> 
 	</div>
