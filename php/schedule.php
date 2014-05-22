@@ -4,19 +4,23 @@
     if(mysqli_connect_errno()) {
         echo "Failed to connect to MySQL:" . mysqli_connect_error();
     }
-$memberid = $_GET['uid'];
+$membersid = $_GET['uid'];
 $currentdays = $_GET['curday'];
 $currinfo = $_GET['dayinf'];
 $address = $_GET['caddress'];
 $location = $_GET['newlocation'];
 $depart = $_GET['departinf'];
 $role = $_GET['role'];
-//$memid = mysqli_query($con,"SELECT memberid FROM $currentdays");
-	
-	//if ($memberid = $memid) {
+$memid = "SELECT memberid FROM $currentdays WHERE memberid = $membersid";
+    $result = mysqli_query($con, $memid);
+    $numRows = mysqli_num_rows($result);
+if ($numRows != 0) {
+mysqli_query($con, "UPDATE $currentdays
+SET arrivaltime='$currinfo', address='$address', location='$location', departtime='$depart', role='$role'
+WHERE memberid='$membersid'");
 
-	//} else {
-   $run1 = mysqli_query($con,"INSERT INTO " . $currentdays . " (arrivaltime, address, location, departtime, role)
-   	VALUES ('$currinfo', '$address', '$location', '$depart', '$role')");
-//}
+	} else {
+   $run1 = mysqli_query($con,"INSERT INTO $currentdays (arrivaltime, address, location, departtime, role, memberid)
+   	VALUES ('$currinfo', '$address', '$location', '$depart', '$role', '$membersid')");
+}
     ?>
