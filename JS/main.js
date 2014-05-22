@@ -1010,7 +1010,7 @@ function sendRequest(day, direction) {
             address:ajaxData2.address    
         }, 
         success: function (data) {
-            if(data == "success") {
+                            if(data == "success") {
                 $("#success" ).popup( "open");
                 setTimeout(function (){
                     $("#success").popup("close");   
@@ -1041,35 +1041,35 @@ function revertRole(role) {
 }
 function genCard() {
     $.ajax({ 
-		type: 'GET', 
-		url: 'php/generateCards.php', 
-		data: { userId:userid },
-		dataType: 'json',
-		success: function (data) {
-			var i = 0;
-			$('#card_gen').html("");
-			while(i < data.length) {
-				var name = data[i].first;
-				var day = data[i].day;
-				$('#card_gen').append("<div data-role=\"main\" class=\"ui-content ui-group-theme-a\">" +
-					"<div class = \"card_container\">" +
-					"<div class=\"thumbnail\"><img src = \"images/thumbnails/nickcage.jpg\" alt = \"oneTrueGod\" width = \"72px\"> </div>" +
-					"<div class=\"card_content\">" + "<p>" +
-					name +
-					" wants to give you a ride on " +
-					day +
-					"!" + "</p>" +
-					"</div>" +
-					"<a href=\"#myPopup2\" data-rel=\"button\" class=\"ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete\"></a>" +
-					"<script>" + " $('.ui-btn-b').click(function() { " +
-					"$(this).closest('.card_container').remove();" + "});" +
-					"</script>" +
-					"</div>" + 
-					"</div>");
-				i++
-			}
-		}
-	});
+        type: 'GET', 
+        url: 'php/generateCards.php', 
+        data: { userId:userid },
+        dataType: 'json',
+        success: function (data) {
+            var i = 0;
+            $('#card_gen').html("");
+            while(i < data.length) {
+                var name = data[i].first;
+                var day = data[i].day;
+                $('#card_gen').append("<div data-role=\"main\" class=\"ui-content ui-group-theme-a\">" +
+                    "<div class = \"card_container\">" +
+                    "<div class=\"thumbnail\"><img src = \"images/thumbnails/nickcage.jpg\" alt = \"oneTrueGod\" width = \"72px\"> </div>" +
+                    "<div class=\"card_content\">" + "<p>" +
+                    name +
+                    " wants to give you a ride on " +
+                    day +
+                    "!" + "</p>" +
+                    "</div>" +
+                    "<a href=\"#myPopup2\" data-rel=\"button\" class=\"ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete\"></a>" +
+                    "<script>" + " $('.ui-btn-b').click(function() { " +
+                    "$(this).closest('.card_container').remove();" + "});" +
+                    "</script>" +
+                    "</div>" + 
+                    "</div>");
+                i++
+            }
+        }
+    });
  }
 
 /*START OF LOGANS STUFF*/
@@ -1193,6 +1193,14 @@ function orderInfo() {
 
 
 function loadInfo() {
+            if (role[currentday-1] == 1) {
+            $("#passenger1").prop('checked', true).checkboxradio("refresh");
+            $("#driver1").checkboxradio("refresh");
+        }
+        else {
+            $("#driver1").prop('checked', true).checkboxradio("refresh");
+            $("#passenger1").checkboxradio("refresh");
+        }
   for (var i = 0; i < info.length; i++) {
       if (document.getElementById("day").innerHTML.substring(0,2) == info[i].substring(info[i].length-2, info[i].length)) {
         if (parseInt(info[i].substring(0,info[i].length - 5)) > 12 ) {
@@ -1222,6 +1230,7 @@ function loadInfo() {
          $('#depam').selectmenu('refresh', true);
     }
   }
+
 /*      for (var i = 0; i < holdmarker.length; i++) {
         
         holdmarker[i].setMap(null); }
@@ -1235,9 +1244,11 @@ function sortInfo() {
 var count = 0;
   for(var i = 0; i < info.length; i++) {
     for (var a = info.length - 1; a > i; a--) {
+        if (info[i] != null) {
       if ((info[i].substring(info[i].length-2, info[i].length) == info[a].substring(info[a].length-2, info[a].length)) && a != i ){
         info.splice(i,1);
       }
+  }
     }
   }
   for(var i = 0; i < depinfo.length; i++) {
@@ -1254,13 +1265,11 @@ function dayChange(num) {
   document.getElementById("day").innerHTML = days[num].charAt(0).toUpperCase() + days[num].substring(1,days[num].length);
   currentday++;
   if (currentday != days.length) {
-    $("#next").attr("onclick", "submitFiles();dayChange(" + currentday + ");loadInfo();");
-    $("#next").val("Next");
-    $("#next").button("refresh");}
-  else {
+    $("#next").attr("onclick", "codeAddress();submitFiles();dayChange(" + currentday + ");loadInfo();");
+    $("#next").val("Next").button("refresh");
+} else {
     $("#next").attr("onclick", "submitFiles();finalSubmit()");
-    $("#next").val("Submit");
-    $("#next").button("refresh");
+    $("#next").val("Submit").button("refresh");
   }
 }
 
@@ -1276,7 +1285,7 @@ var carinfo;
 orderInfo();
 for (var i = 0; i < nInfo.length; i += 2) {
   if ( nInfo[i] != null ) {
-    if (dInfo[i] != null) {
+    if (dInfo[i] != null       ) {
       depart = dInfo[i];
     }
     daystr = nInfo[i];
@@ -1288,8 +1297,17 @@ for (var i = 0; i < nInfo.length; i += 2) {
 $.ajax({
   type: 'GET',
   url: 'php/schedule.php',
-  data: {curday: today, dayinf: daystr, caddress: setaddress, newlocation: loca, departinf: depart, role: carinfo},
+  data: {
+    curday: today,
+    dayinf: daystr,
+    caddress: setaddress,
+    newlocation: loca,
+    departinf: depart,
+    role: carinfo,
+    uid: userid
+    },
   success: function(data) {
+location.href = "#findMatches";
   }
 
   });
@@ -1347,6 +1365,15 @@ function radioCheck() {
 if (bad == 0 && days.length != 0 && ran == 0) {
     document.getElementById("day").innerHTML = days[0].charAt(0).toUpperCase() + days[0].substring(1,days[0].length);
     buttonGen();
+    for (var i = 0; i < days.length; i++) {
+        if($("#passenger1").is(':checked') == true) {
+            role.push(1);
+
+        }
+        else {
+            role.push(0);
+        }
+    }
     ran++;
   } else {
     return false;
@@ -1355,6 +1382,7 @@ if (bad == 0 && days.length != 0 && ran == 0) {
 if (days.length == 1) { 
     $("#next").attr("onclick", "submitFiles();finalSubmit()");
     $("#next").val("Submit");
+    $("#next").button("refresh");
 }
 }
 
@@ -1449,7 +1477,3 @@ map2count++;
       }
     });
   }
-
-
-
-
