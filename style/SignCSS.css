@@ -35,16 +35,7 @@ border-radius: 1em;
 padding-top: 10px;
 }
 
-#register {
-padding-left: 85px;
-}
-
-#back {
-padding-top: 10px;
-padding-left: 40px;
-}
-
-#signinback {
+#signinback, #back{
 padding-top: 10px;
 padding-left: 25px;
 }

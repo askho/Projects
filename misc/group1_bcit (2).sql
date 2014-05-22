@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2014 at 06:03 AM
+-- Generation Time: May 20, 2014 at 02:21 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -54,26 +54,6 @@ INSERT INTO `confirmed` (`id`, `confirmid`, `driverid`, `passengerid`, `directio
 -- --------------------------------------------------------
 
 --
--- Table structure for table `confirmed2`
---
-
-CREATE TABLE IF NOT EXISTS `confirmed2` (
-  `id` int(7) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `confirmed2`
---
-
-INSERT INTO `confirmed2` (`id`) VALUES
-(1),
-(2);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `friday`
 --
 
@@ -98,7 +78,8 @@ INSERT INTO `friday` (`memberid`, `location`, `address`, `role`, `arrivaltime`, 
 (2, '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC', 1, '08:30:00', '17:20:00', ''),
 (1, '049.152451, -122.3202850', '8270 Kudo DR mission BC', 1, '08:30:00', '17:20:00', ''),
 (0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
-(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', '');
+(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', ''),
+(26, '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3', 1, '08:30:00', '17:20:00', '');
 
 -- --------------------------------------------------------
 
@@ -128,7 +109,8 @@ INSERT INTO `monday` (`memberid`, `location`, `address`, `role`, `arrivaltime`, 
 (1, '049.152451, -122.3202850', '8270 Kudo DR mission BC', 1, '08:30:00', '17:20:00', ''),
 (0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
 (24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', ''),
-(0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', '');
+(0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
+(26, '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3', 1, '08:30:00', '17:20:00', '');
 
 -- --------------------------------------------------------
 
@@ -156,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `profile` (
   `saturdayConfirmationid` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `sundayConfirmationid` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`memberid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `profile`
@@ -169,7 +151,9 @@ INSERT INTO `profile` (`memberid`, `username`, `password`, `first`, `last`, `pho
 (4, 'user', 'pass', 'logan', 'hollins', '604 321 5242', 'hollins@gmail.com', '', '', 0, 0, '', '', '', '', '', '', ''),
 (5, 'user', 'password', 'Trent ', 'Sonic', '778 321 2312', 'trent@gmail.com', '', '', 0, 0, '1', '', '', '', '', '', ''),
 (23, 'user', 'pass', 'John', 'Janzen', '604 123 1324', 'jJanzen@gmail.com', '', '', 0, 0, '', '', '', '', '', '', ''),
-(24, 'sClause', 'password', 'Santa', 'Clause', '604 327 912', 'sClause@gmail.com', '', '', 0, 0, '', '', '', '', '', '', '');
+(24, 'sClause', 'password', 'Santa', 'Clause', '604 327 912', 'sClause@gmail.com', '', '', 0, 0, '', '', '', '', '', '', ''),
+(25, '', 'd41d8cd98f00b204e9800998ecf8427e', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', ''),
+(26, 'askho', '1f48a39daf1339bfd948b2fd5cfe6a47', 'Leon ', 'Ho', '', 'lho51@my.bcit.ca', '', '', 0, 0, '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -179,21 +163,28 @@ INSERT INTO `profile` (`memberid`, `username`, `password`, `first`, `last`, `pho
 
 CREATE TABLE IF NOT EXISTS `requests` (
   `requestid` int(7) NOT NULL AUTO_INCREMENT,
-  `driverid` int(7) NOT NULL,
-  `passengerid` longblob NOT NULL,
+  `requesteerole` tinyint(1) NOT NULL COMMENT 'pass=true, driver=false',
+  `requesterid` int(7) NOT NULL,
+  `requesteeid` int(7) NOT NULL,
   `info` longblob NOT NULL,
   `day` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `direction` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `location` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`requestid`),
   UNIQUE KEY `requestid` (`requestid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `requests`
 --
 
-INSERT INTO `requests` (`requestid`, `driverid`, `passengerid`, `info`, `day`, `direction`) VALUES
-(1, 5, 0x342c20332c20322c20312c2030, '', 'monday', '00:00:00');
+INSERT INTO `requests` (`requestid`, `requesteerole`, `requesterid`, `requesteeid`, `info`, `day`, `direction`, `location`, `address`) VALUES
+(2, 0, 5, 5, '', 'monday', 'arrival', '49.225593, -123.044176', '6454 KILLARNEY ST Vancouver BC'),
+(4, 0, 1, 5, '', 'tuesday', 'arrival', '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8'),
+(5, 0, 2, 5, '', 'wednesday', 'arrival', '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC'),
+(6, 0, 26, 26, '', 'monday', 'arrival', '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3'),
+(7, 0, 26, 5, '', 'monday', 'arrival', '49.284760, -123.056730', 'Grandview-Woodland,Vancouver');
 
 -- --------------------------------------------------------
 
@@ -222,7 +213,8 @@ INSERT INTO `saturday` (`memberid`, `location`, `address`, `role`, `arrivaltime`
 (2, '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC', 1, '08:30:00', '17:20:00', ''),
 (1, '049.152451, -122.3202850', '8270 Kudo DR mission BC', 1, '08:30:00', '17:20:00', ''),
 (0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
-(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', '');
+(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', ''),
+(26, '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3', 1, '08:30:00', '17:20:00', '');
 
 -- --------------------------------------------------------
 
@@ -251,7 +243,8 @@ INSERT INTO `sunday` (`memberid`, `location`, `address`, `role`, `arrivaltime`, 
 (2, '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC', 1, '08:30:00', '17:20:00', ''),
 (1, '049.152451, -122.3202850', '8270 Kudo DR mission BC', 1, '08:30:00', '17:20:00', ''),
 (0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
-(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', '');
+(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', ''),
+(26, '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3', 1, '08:30:00', '17:20:00', '');
 
 -- --------------------------------------------------------
 
@@ -280,7 +273,8 @@ INSERT INTO `thursday` (`memberid`, `location`, `address`, `role`, `arrivaltime`
 (2, '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC', 1, '08:30:00', '17:20:00', ''),
 (1, '049.152451, -122.3202850', '8270 Kudo DR mission BC', 1, '08:30:00', '17:20:00', ''),
 (0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
-(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', '');
+(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', ''),
+(26, '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3', 1, '08:30:00', '17:20:00', '');
 
 -- --------------------------------------------------------
 
@@ -303,13 +297,12 @@ CREATE TABLE IF NOT EXISTS `tuesday` (
 --
 
 INSERT INTO `tuesday` (`memberid`, `location`, `address`, `role`, `arrivaltime`, `departtime`, `info`) VALUES
-(5, '49.284760, -123.056730', 'Grandview-Woodland,Vancouver', 0, '08:30:00', '17:20:00', ''),
 (4, '49.225593, -123.044176', '6454 KILLARNEY ST Vancouver BC', 1, '08:30:00', '17:20:00', ''),
 (3, '49.214869, -123.0781140', '1367 61ST AV E vancouver BC', 1, '08:30:00', '17:20:00', ''),
 (2, '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC', 1, '08:30:00', '17:20:00', ''),
 (1, '049.152451, -122.3202850', '8270 Kudo DR mission BC', 1, '08:30:00', '17:20:00', ''),
 (0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
-(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', '');
+(26, '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3', 1, '08:30:00', '17:20:00', '');
 
 -- --------------------------------------------------------
 
@@ -338,7 +331,8 @@ INSERT INTO `wednesday` (`memberid`, `location`, `address`, `role`, `arrivaltime
 (2, '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC', 1, '08:30:00', '17:20:00', ''),
 (1, '049.152451, -122.3202850', '8270 Kudo DR mission BC', 1, '08:30:00', '17:20:00', ''),
 (0, '049.251825, -123.0039780', '3700 WILLINGDON AVE Burnaby BC', 1, '08:30:00', '17:20:00', ''),
-(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', '');
+(24, '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8', 0, '08:30:00', '17:20:00', ''),
+(26, '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3', 1, '08:30:00', '17:20:00', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
