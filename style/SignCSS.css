@@ -63,3 +63,19 @@ padding-left: 25px;
 .ui-content-landing {
 	margin-top: 310px;
 }
+
+#signin{
+background-color: #FFF;
+color: #0055C9;
+text-shadow: none;
+font-size: 1.2em;
+font-weight: 700;
+}
+
+#signup{
+background-color: #FFF;
+color: #0055C9;
+text-shadow: none;
+font-size: 1.2em;
+font-weight: 700;
+}
