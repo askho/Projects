@@ -1,3 +1,8 @@
+<?php
+	if (!isset($_COOKIE["memberID"])) {
+		header('Location: start.php');
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -345,6 +350,32 @@
             <div id="mapcanvas3"></div>
             <div id="directions-panel"></div>
         </div>
+    </div>
+       <div data-role="page" id="editProfile">
+        <div data-role="header">
+            <a class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars"
+            data-role="button" href="#mypanel">Home</a>
+
+            <h1>Edit profile</h1>
+        </div>
+
+        <div class="ui-content" data-role="main">
+        	First name<br />
+        	<input type = "text" id = "fname" name = "fname">
+        	Last name <br />
+        	<input type = "text" id = "lname" name = "lname">
+        	Password <br />
+        	<input type = "password" id = "pass" name = "pass">
+        	Confirm Password<br />
+        	<input type = 'password' id ="confirmPass" name = "confirmPass">
+        	Phone<br />
+        	<input type="tel" name="phone" id = "phone">
+        	Email <br />
+        	<input type = "email" id = "email" id = "email">
+        	About You<br />
+        	<textarea id = "about"></textarea>
+        	<button value = "save" onclick ="validateEditProfile()">Save</button>
+         </div>
     </div>
 </body>
 </html>

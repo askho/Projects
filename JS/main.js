@@ -97,7 +97,10 @@ function formValidate() {
 }
 
 function RunSignOUT() {
-	location.href = 'php/Signout.php';
+	document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    document.cookie = "memberID=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+    delete window.userid; 
+    window.location.href = "start.php";
 }
 
 function SignUpDone() {
@@ -1037,6 +1040,30 @@ function revertRole(role) {
         return 0;
     } else {
         return 1;
+    }
+}
+function validateEditProfile() {
+    var password = document.getElementById('pass').value;
+    var Confirmpassword = document.getElementById('confirmPass').value;
+    
+    
+    if (password == Confirmpassword) {
+        alert("were good here");
+        $.get( "php/editProfile.php", 
+            {   user: userid,
+                fname: $("#fname").val(), 
+                lname: $("#lname").val(),
+                pass: $("#pass").val(),
+                phone: $("#phone").val(),
+                email: $("#email").val(),
+                about: $("#about").val() 
+            } )
+          .done(function( data ) {
+            alert( "Data Loaded: " + data );
+          });
+        return true;
+    } else {
+    return false;
     }
 }
 function genCard() {
