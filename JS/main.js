@@ -1043,11 +1043,9 @@ function genCard() {
     $.ajax({ 
 		type: 'GET', 
 		url: 'php/generateCards.php', 
-		data: { }, 
+		data: { userId:userid },
 		dataType: 'json',
 		success: function (data) {
-			//alert(data[0].first);
-			//alert(data[1].first);
 			var i = 0;
 			$('#card_gen').html("");
 			while(i < data.length) {
@@ -1063,6 +1061,9 @@ function genCard() {
 					"!" + "</p>" +
 					"</div>" +
 					"<a href=\"#myPopup2\" data-rel=\"button\" class=\"ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete\"></a>" +
+					"<script>" + " $('.ui-btn-b').click(function() { " +
+					"$(this).closest('.card_container').remove();" + "});" +
+					"</script>" +
 					"</div>" + 
 					"</div>");
 				i++
