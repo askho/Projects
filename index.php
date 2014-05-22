@@ -41,7 +41,7 @@
     
 	<!-- CARD GEN DIV -->
 	
-	<h1>You have new notifications!</h1>
+	<h1>Your Notifications</h1>
         
 		<div id = "card_gen">
 			<script> genCard();
