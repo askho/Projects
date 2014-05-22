@@ -39,7 +39,7 @@
 			<a href="#mypanel" data-role="button" class="ui-btn ui-btn-icon-notext ui-nodisc-icon ui-icon-bars">Home</a>
     </div>
     
-	<!-- TEST PAGE FOR CARDS -->
+	<!-- CARD GEN DIV -->
 	
 	<h1>You have new notifications!</h1>
         
@@ -48,7 +48,7 @@
 			</script>
         </div>
 	
-	<!-- END OF TEST PAGE FOR CARDS -->
+	<!-- START OF NICK CAGE TEST CARDS
 	
 	<div data-role="main" class="ui-content ui-group-theme-a">
 			<a href = "#showRoutes">Show routes</a>
@@ -58,7 +58,7 @@
 			<div class="card_content">
 				<p>Sir Cage wants to give you a ride on Monday!Sir Cage wants to give you a ride on Monday!</p>
 			</div>
-				<!--Decline Button-->
+				
 				<a href="#myPopup2" data-rel="button" class="ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete"></a>
 		</div>
 		
@@ -68,7 +68,7 @@
 			<div class="card_content">
 				<p>Sir Cage wants to give you a ride on Monday!Sir Cage wants to give you a ride on Monday!</p>
 			</div>
-				<!--Decline Button-->
+				
 				<a href="#myPopup2" data-rel="button" class="ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete"></a>
 		</div>
 		
@@ -78,9 +78,11 @@
 			<div class="card_content">
 				<p>Sir Cage wants to give you a ride on Monday!Sir Cage wants to give you a ride on Monday!</p>
 			</div>
-				<!--Decline Button-->
+				
 				<a href="#myPopup2" data-rel="button" class="ui-btn-b ui-btn ui-btn-right ui-nodisc-icon ui-btn-icon-notext ui-mini ui-icon-delete"></a>
 		</div>
+		
+		 END OF NICK CAGE TEST CARDS -->
 				
 	</div> 
 	</div>
