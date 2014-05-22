@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.1.9
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 20, 2014 at 02:21 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Host: localhost:8889
+-- Generation Time: May 23, 2014 at 01:17 AM
+-- Server version: 5.5.34
+-- PHP Version: 5.5.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `group1_bcit`
+-- Database: `group1_BCIT`
 --
 
 -- --------------------------------------------------------
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `confirmed`
 --
 
-CREATE TABLE IF NOT EXISTS `confirmed` (
+CREATE TABLE `confirmed` (
   `id` int(7) NOT NULL AUTO_INCREMENT,
   `confirmid` int(7) NOT NULL,
   `driverid` int(7) NOT NULL,
@@ -57,7 +57,7 @@ INSERT INTO `confirmed` (`id`, `confirmid`, `driverid`, `passengerid`, `directio
 -- Table structure for table `friday`
 --
 
-CREATE TABLE IF NOT EXISTS `friday` (
+CREATE TABLE `friday` (
   `memberid` int(6) NOT NULL,
   `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -87,7 +87,7 @@ INSERT INTO `friday` (`memberid`, `location`, `address`, `role`, `arrivaltime`, 
 -- Table structure for table `monday`
 --
 
-CREATE TABLE IF NOT EXISTS `monday` (
+CREATE TABLE `monday` (
   `memberid` int(6) NOT NULL,
   `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -118,7 +118,7 @@ INSERT INTO `monday` (`memberid`, `location`, `address`, `role`, `arrivaltime`, 
 -- Table structure for table `profile`
 --
 
-CREATE TABLE IF NOT EXISTS `profile` (
+CREATE TABLE `profile` (
   `memberid` int(6) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -153,7 +153,7 @@ INSERT INTO `profile` (`memberid`, `username`, `password`, `first`, `last`, `pho
 (23, 'user', 'pass', 'John', 'Janzen', '604 123 1324', 'jJanzen@gmail.com', '', '', 0, 0, '', '', '', '', '', '', ''),
 (24, 'sClause', 'password', 'Santa', 'Clause', '604 327 912', 'sClause@gmail.com', '', '', 0, 0, '', '', '', '', '', '', ''),
 (25, '', 'd41d8cd98f00b204e9800998ecf8427e', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', ''),
-(26, 'askho', '1f48a39daf1339bfd948b2fd5cfe6a47', 'Leon ', 'Ho', '', 'lho51@my.bcit.ca', '', '', 0, 0, '', '', '', '', '', '', '');
+(26, 'askho', '1f48a39daf1339bfd948b2fd5cfe6a47', 'Frogger', 'Sham', '604 327 8390', 'FrogSham@gmail.com', 0x49206c766f652066726f6773, '', 0, 0, '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -161,7 +161,7 @@ INSERT INTO `profile` (`memberid`, `username`, `password`, `first`, `last`, `pho
 -- Table structure for table `requests`
 --
 
-CREATE TABLE IF NOT EXISTS `requests` (
+CREATE TABLE `requests` (
   `requestid` int(7) NOT NULL AUTO_INCREMENT,
   `requesteerole` tinyint(1) NOT NULL COMMENT 'pass=true, driver=false',
   `requesterid` int(7) NOT NULL,
@@ -173,18 +173,21 @@ CREATE TABLE IF NOT EXISTS `requests` (
   `address` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`requestid`),
   UNIQUE KEY `requestid` (`requestid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=52 ;
 
 --
 -- Dumping data for table `requests`
 --
 
 INSERT INTO `requests` (`requestid`, `requesteerole`, `requesterid`, `requesteeid`, `info`, `day`, `direction`, `location`, `address`) VALUES
-(2, 0, 5, 5, '', 'monday', 'arrival', '49.225593, -123.044176', '6454 KILLARNEY ST Vancouver BC'),
-(4, 0, 1, 5, '', 'tuesday', 'arrival', '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8'),
-(5, 0, 2, 5, '', 'wednesday', 'arrival', '049.215760, -122.5758430', '23345 117B AVE MAPLE RIDGE BC'),
-(6, 0, 26, 26, '', 'monday', 'arrival', '49.313386, -123.072406', '428-456 St Georges Ave North Vancouver, BC V7L 1L3'),
-(7, 0, 26, 5, '', 'monday', 'arrival', '49.284760, -123.056730', 'Grandview-Woodland,Vancouver');
+(44, 0, 26, 5, '', 'monday', 'arrival', '49.284760, -123.056730', 'Grandview-Woodland,Vancouver'),
+(45, 0, 26, 5, '', 'monday', 'departure', '49.284760, -123.056730', 'Grandview-Woodland,Vancouver'),
+(46, 0, 26, 5, '', 'saturday', 'arrival', '49.284760, -123.056730', 'Grandview-Woodland,Vancouver'),
+(47, 0, 26, 24, '', 'monday', 'arrival', '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8'),
+(48, 0, 26, 24, '', 'monday', 'departure', '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8'),
+(49, 0, 26, 5, '', 'friday', 'arrival', '49.284760, -123.056730', 'Grandview-Woodland,Vancouver'),
+(50, 0, 26, 5, '', 'sunday', 'arrival', '49.284760, -123.056730', 'Grandview-Woodland,Vancouver'),
+(51, 0, 26, 24, '', 'sunday', 'arrival', '49.184532, -123.089400', '12062-12142 Cambie Rd, Richmond, BC V6V 2H8');
 
 -- --------------------------------------------------------
 
@@ -192,7 +195,7 @@ INSERT INTO `requests` (`requestid`, `requesteerole`, `requesterid`, `requesteei
 -- Table structure for table `saturday`
 --
 
-CREATE TABLE IF NOT EXISTS `saturday` (
+CREATE TABLE `saturday` (
   `memberid` int(6) NOT NULL,
   `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -222,7 +225,7 @@ INSERT INTO `saturday` (`memberid`, `location`, `address`, `role`, `arrivaltime`
 -- Table structure for table `sunday`
 --
 
-CREATE TABLE IF NOT EXISTS `sunday` (
+CREATE TABLE `sunday` (
   `memberid` int(6) NOT NULL,
   `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -252,7 +255,7 @@ INSERT INTO `sunday` (`memberid`, `location`, `address`, `role`, `arrivaltime`, 
 -- Table structure for table `thursday`
 --
 
-CREATE TABLE IF NOT EXISTS `thursday` (
+CREATE TABLE `thursday` (
   `memberid` int(6) NOT NULL,
   `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -282,7 +285,7 @@ INSERT INTO `thursday` (`memberid`, `location`, `address`, `role`, `arrivaltime`
 -- Table structure for table `tuesday`
 --
 
-CREATE TABLE IF NOT EXISTS `tuesday` (
+CREATE TABLE `tuesday` (
   `memberid` int(6) NOT NULL,
   `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -310,7 +313,7 @@ INSERT INTO `tuesday` (`memberid`, `location`, `address`, `role`, `arrivaltime`,
 -- Table structure for table `wednesday`
 --
 
-CREATE TABLE IF NOT EXISTS `wednesday` (
+CREATE TABLE `wednesday` (
   `memberid` int(6) NOT NULL,
   `location` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
